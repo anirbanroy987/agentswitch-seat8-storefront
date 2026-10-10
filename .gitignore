@@ -1,0 +1,16 @@
+# secrets: API keys, cached AgentSwitch tokens
+.env
+.secrets/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# run records are evidence, but large and full of live business data;
+# selected runs are copied into evidence/ and committed from there
+runs/
+
+# full platform catalogue dumps are big; the storefront subset is committed
+catalog/*/schemas_all.json

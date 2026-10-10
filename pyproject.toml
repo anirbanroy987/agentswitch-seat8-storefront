@@ -1,0 +1,20 @@
+[project]
+name = "seat8-storefront-agent"
+version = "0.1.0"
+description = "Team 08 Storefront agent for AgentSwitch: drives the platform over MCP with Gemini"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai>=1.0",
+    "certifi>=2024.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = ["-ra"]

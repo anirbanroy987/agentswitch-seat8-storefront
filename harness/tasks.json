@@ -1,0 +1,14 @@
+{
+  "_doc": "One object per task. question -> what the agent is asked; biz -> in|us; expect.sections -> the status each finding section must end in (answered|refused|ambiguous); expect.path -> graph|chat|refusal; verifiers -> names from harness/verifiers.py; params -> data the verifiers read; write -> allow the agent to write (default false, dry run). Tasks marked author=claude-sample are patterns, not graded tests.",
+  "tasks": [
+    {
+      "id": "SAMPLE-refuse-unknown-launch-coupon",
+      "author": "claude-sample",
+      "question": "How did the launch coupon perform?",
+      "biz": "in",
+      "expect": {"path": "graph", "sections": {"coupon_performance": "refused"}},
+      "verifiers": ["sample_coupon_absent"],
+      "params": {"absent_term": "launch"}
+    }
+  ]
+}
