@@ -44,7 +44,7 @@ class Gemini:
             try:
                 resp = self.client.models.generate_content(
                     model=self.model, contents=contents, config=config)
-                self._account(resp, started)
+                self._account(resp, started, contents, config)
                 return resp
             except Exception as e:  # the SDK raises several error types
                 msg = str(e)
@@ -54,15 +54,26 @@ class Gemini:
                     continue
                 raise LLMUnavailable(f"{self.model}: {msg[:300]}") from None
 
-    def _account(self, resp, started: float) -> None:
+    def _account(self, resp, started: float, contents=None, config=None) -> None:
+        """Usage totals, and a full audit record: system prompt, prompt, response."""
         u = getattr(resp, "usage_metadata", None)
         self.usage["calls"] += 1
         self.usage["input_tokens"] += getattr(u, "prompt_token_count", 0) or 0
         self.usage["output_tokens"] += getattr(u, "candidates_token_count", 0) or 0
         if self.on_call:
+            try:
+                text = resp.text
+            except (ValueError, AttributeError):  # a function-call-only response has no text
+                text = None
+            calls = [{"name": p.function_call.name, "args": dict(p.function_call.args or {})}
+                     for c in (resp.candidates or [])[:1] for p in (c.content.parts or [])
+                     if getattr(p, "function_call", None)] if getattr(resp, "candidates", None) else []
             self.on_call({"model": self.model, "ms": round((time.time() - started) * 1000),
                           "input_tokens": getattr(u, "prompt_token_count", None),
-                          "output_tokens": getattr(u, "candidates_token_count", None)})
+                          "output_tokens": getattr(u, "candidates_token_count", None),
+                          "system": getattr(config, "system_instruction", None),
+                          "prompt": _contents_text(contents), "response": text,
+                          "function_calls": calls})
 
     def generate_json(self, system: str, prompt: str, schema: dict | None = None,
                       temperature: float = 0.0) -> Any:
@@ -152,6 +163,8 @@ class ToolLoop:
             system_instruction=system, temperature=0.0, tools=self._declarations(),
             automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True))
         contents = [types.Content(role="user", parts=[types.Part(text=question)])]
+        seen: set[str] = set()
+        self.stopped_at_budget = False
         for step in range(self.max_steps):
             resp = self.llm._generate(contents, config)
             cand = resp.candidates[0].content if resp.candidates else None
@@ -164,18 +177,40 @@ class ToolLoop:
             for fc in calls:
                 tool = fc.name.replace("__", ".")
                 args = dict(fc.args or {})
-                try:
-                    result = {"ok": True, "result": self.executor(tool, args)}
-                except Exception as e:  # report the failure to the model, keep going
-                    result = {"ok": False, "error_code": getattr(e, "code", "error"),
-                              "error": str(e)[:500]}
+                key = tool + json.dumps(args, sort_keys=True, default=str)
+                if key in seen:  # repeat guard: an identical call never runs twice
+                    result = {"ok": False, "error_code": "repeated_call",
+                              "error": "You already made this exact call; use its earlier result."}
+                else:
+                    seen.add(key)
+                    try:
+                        result = {"ok": True, "result": self.executor(tool, args)}
+                    except Exception as e:  # report the failure to the model, keep going
+                        result = {"ok": False, "error_code": getattr(e, "code", "error"),
+                                  "error": str(e)[:500]}
                 self.trace.append({"step": step, "tool": tool, "arguments": args,
                                    "ok": result["ok"],
                                    "error_code": result.get("error_code")})
                 parts.append(types.Part.from_function_response(
                     name=fc.name, response=_truncate(result)))
             contents.append(types.Content(role="user", parts=parts))
+        self.stopped_at_budget = True
         return "I stopped after the step limit without a complete answer."
+
+
+def _contents_text(contents) -> Any:
+    if contents is None or isinstance(contents, str):
+        return contents
+    out = []
+    for c in contents:
+        for p in getattr(c, "parts", None) or []:
+            if getattr(p, "text", None):
+                out.append({"role": c.role, "text": p.text})
+            elif getattr(p, "function_call", None):
+                out.append({"role": c.role, "call": p.function_call.name})
+            elif getattr(p, "function_response", None):
+                out.append({"role": c.role, "result_of": p.function_response.name})
+    return out
 
 
 def _truncate(result: dict, limit: int = 30000) -> dict:

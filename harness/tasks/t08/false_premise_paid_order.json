@@ -1,0 +1,28 @@
+{
+  "id": "false_premise_paid_order",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {
+    "order_number": "WEB-2026-00109",
+    "claims": [
+      "shipped",
+      "unpaid"
+    ]
+  },
+  "instances": [
+    "suryodaya"
+  ],
+  "prompt": "Why did WEB-2026-00109 ship without payment?",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "order_check": "answered"
+    }
+  },
+  "verifiers": [
+    "order_premise_corrected"
+  ],
+  "checks": "False premise: WEB-2026-00109 is paid and not yet delivered. The agent must mark the premise false and judge each claim as the DB says."
+}

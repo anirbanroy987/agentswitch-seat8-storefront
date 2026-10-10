@@ -97,15 +97,31 @@ class MCPClient:
                 break
         return tools
 
-    def call(self, name: str, arguments: dict | None = None) -> Any:
-        """Call one tool; return its structured result. Raises MCPError."""
+    def call(self, name: str, arguments: dict | None = None, retries: int | None = None) -> Any:
+        """Call one tool; return its structured result. Raises MCPError.
+
+        Reads (`*.list`, `*.get`, ...) are retried on `transient` failures;
+        writes never are, since a timed-out write may have landed."""
+        if retries is None:
+            retries = 2 if is_read_tool(name) else 0
+        for attempt in range(retries + 1):
+            try:
+                return self._call_once(name, arguments)
+            except MCPError as e:
+                if e.code != TRANSIENT or attempt == retries:
+                    raise
+                time.sleep(1.5 * (attempt + 1))
+        raise AssertionError("unreachable")
+
+    def _call_once(self, name: str, arguments: dict | None) -> Any:
         args = arguments or {}
         started = time.time()
         record = {"tool": name, "arguments": args, "started": started}
         try:
             result = self._rpc("tools/call", {"name": name, "arguments": args}, label=name)
             if result.get("isError"):
-                raise MCPError(f"{name}: {_content_text(result)[:400]}", UNKNOWN, raw=result)
+                text = _content_text(result)
+                raise MCPError(f"{name}: {text[:400]}", _error_code_in_text(text), raw=result)
             value = result.get("structuredContent")
             if value is None:
                 value = _parse_content(result)
@@ -170,6 +186,31 @@ class MCPClient:
         if e.code == 429 or e.code >= 500:
             return MCPError(f"{label}: HTTP {e.code}", TRANSIENT)
         return MCPError(f"{label}: HTTP {e.code} {body!r}", UNKNOWN)
+
+
+READ_SUFFIXES = ("list", "get", "describe", "search", "get_mine")
+# app endpoints that are GETs on the platform (tools/list marks them risk: read)
+READ_ENDPOINTS = {"endpoint.storefront.locale", "endpoint.storefront.products", "endpoint.storefront.categories",
+                  "endpoint.storefront.shipping_methods", "endpoint.storefront.order", "endpoint.people_directory",
+                  "endpoint.storefront.account.orders"}
+
+
+def is_read_tool(name: str) -> bool:
+    return name in READ_ENDPOINTS or name.split(".")[-1] in READ_SUFFIXES
+
+
+def _error_code_in_text(text: str) -> str:
+    """isError results end with a JSON tail like {"code": "request_refused", "status": 403}."""
+    i = text.rfind("{")
+    try:
+        tail = json.loads(text[i:]) if i >= 0 else {}
+    except ValueError:
+        tail = {}
+    if tail.get("status") == 403 or tail.get("code") in ("request_refused", "forbidden"):
+        return FORBIDDEN
+    if tail.get("status") == 404 or tail.get("code") == NOT_FOUND:
+        return NOT_FOUND
+    return tail.get("code") or UNKNOWN
 
 
 def _content_text(result: dict) -> str:

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import threading
 import time
 import uuid
 from pathlib import Path
@@ -46,12 +47,14 @@ class RunRecord:
     def save(self) -> None:
         _write_json(self.dir / "run.json", self.data)
 
+    _lock = threading.Lock()  # snapshot reads run on worker threads; one line per call, never interleaved
+
     def log_call(self, record: dict) -> None:
-        with open(self.dir / "calls.jsonl", "a", encoding="utf-8") as f:
+        with self._lock, open(self.dir / "calls.jsonl", "a", encoding="utf-8") as f:
             f.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
 
     def log_llm(self, record: dict) -> None:
-        with open(self.dir / "llm.jsonl", "a", encoding="utf-8") as f:
+        with self._lock, open(self.dir / "llm.jsonl", "a", encoding="utf-8") as f:
             f.write(json.dumps(record, default=str) + "\n")
 
     def warn(self, message: str) -> None:

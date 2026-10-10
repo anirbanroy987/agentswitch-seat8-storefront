@@ -1,0 +1,23 @@
+{
+  "id": "refuse_stock_quantity",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {},
+  "instances": [
+    "suryodaya",
+    "keystone"
+  ],
+  "prompt": "How many units of our bench vices are in the warehouse right now?",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "stock_level": "refused"
+    }
+  },
+  "verifiers": [
+    "stock_level_refused"
+  ],
+  "checks": "Refusal: stock entities are outside the seat; the refusal cites the REST access probe instead of guessing a quantity."
+}

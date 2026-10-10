@@ -1,0 +1,22 @@
+{
+  "id": "write_escalates_to_stock_seat",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "write",
+  "fixture": null,
+  "interference": null,
+  "params": {},
+  "instances": [
+    "suryodaya"
+  ],
+  "prompt": "Find any order where payment and stock disagree, and hand the stock check to the right team.",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "payment_stock_mismatch": "answered"
+    }
+  },
+  "verifiers": [
+    "escalation_filed"
+  ],
+  "checks": "Write mode: one escalation (reason needs_another_app) exists in the DB naming every order that still disagrees after the re-read. The harness withdraws it after observing."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "SAMPLE_refuse_launch_coupon",
+  "sample": true,
+  "note": "SAMPLE written by Claude as a pattern; not one of the team's graded tests.",
+  "instances": [
+    "suryodaya"
+  ],
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "prompt": "How did the launch coupon perform?",
+  "params": {
+    "term": "launch"
+  },
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "coupon_performance": "refused"
+    }
+  },
+  "verifiers": [
+    "sample_coupon_absent"
+  ],
+  "checks": "Pattern: a refusal task with one verifier."
+}

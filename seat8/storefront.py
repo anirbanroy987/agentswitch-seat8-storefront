@@ -26,6 +26,7 @@ from .mcp import MCPClient, MCPError
 
 PAGE = 200
 FULFILLED = {"delivered", "partially_delivered"}
+FIXTURE_PREFIX = "[T08 fixture]"   # rows the harness owns; reported like any other row, but tagged
 LIVE_SO = {"draft", "confirmed", "to_deliver", "to_deliver_and_bill", "on_hold"}
 
 
@@ -262,6 +263,7 @@ def payment_stock_mismatches(snap: Snapshot, today: date, stale_days: int = 7) -
                 "sales_order_status": (so or {}).get("status"),
                 "delivered_status": (so or {}).get("delivered_status"),
                 "order_updated_at": o.get("updated_at"),
+                "fixture": (o.get("customer_name") or "").startswith(FIXTURE_PREFIX),
             })
     order = {"high": 0, "medium": 1, "low": 2}
     found.sort(key=lambda m: (order[m["severity"]], m["order_date"] or "", m["order_number"] or ""))
@@ -287,9 +289,54 @@ def payment_stock_mismatches(snap: Snapshot, today: date, stale_days: int = 7) -
     }
 
 
+# ── one named order ───────────────────────────────────────────────────────
+
+CLAIMS = ("unpaid", "paid", "shipped", "delivered", "cancelled", "late")
+
+
+def order_facts(order: dict, so: dict | None, today: date) -> dict:
+    delivered = (so or {}).get("delivered_status") in FULFILLED or order.get("status") in ("shipped", "delivered")
+    return {
+        "order_number": order.get("number"), "order_status": order.get("status"),
+        "order_date": order.get("order_date"), "payment_method": order.get("payment_method"),
+        "payment_captured": payment_captured(order), "grand_total": _f(order.get("grand_total")),
+        "sales_order_number": (so or {}).get("number"), "sales_order_status": (so or {}).get("status"),
+        "delivered_status": (so or {}).get("delivered_status"), "delivered": delivered,
+        "flags": classify_order(order, so, today),
+    }
+
+
+def check_claim(claim: str, facts: dict) -> bool | None:
+    """Does the user's claim about an order hold? None = cannot be judged from storefront data."""
+    return {"unpaid": not facts["payment_captured"], "paid": facts["payment_captured"],
+            "shipped": facts["delivered"], "delivered": facts["delivered"],
+            "cancelled": facts["order_status"] == "cancelled"}.get(claim)
+
+
+def order_check(snap: Snapshot, refs: list[str], claims: list[str], today: date) -> dict:
+    by_number = {(o.get("number") or "").upper(): o for o in snap.orders}
+    results = []
+    for ref in refs:
+        o = by_number.get(ref.strip().upper())
+        if o is None:
+            results.append({"order_number": ref, "status": "not_found",
+                            "reason": f"No web order numbered {ref} exists in this store."})
+            continue
+        facts = order_facts(o, snap.sales_orders.get(o.get("sales_order_id") or ""), today)
+        checks = [{"claim": c, "holds": check_claim(c, facts)} for c in claims if c in CLAIMS]
+        results.append({"status": "answered", **facts, "claims": checks,
+                        "premise_false": any(c["holds"] is False for c in checks)})
+    statuses = {r["status"] for r in results}
+    return {"status": "not_found" if statuses == {"not_found"} else "answered", "orders": results}
+
+
 def reread_orders(client: MCPClient, matches: list[dict], today: date) -> dict:
-    """Before acting on flagged orders, read each one again; keep only those
-    whose flag still holds. The book is shared, so a minute-old row may be stale."""
+    """Before answering or acting, read each flagged order again. The book is
+    shared, so a minute-old row may be stale:
+      * the flag no longer holds          -> changed, dropped from still_holds
+      * the row changed but the flag holds -> changed (reported with new values),
+                                              kept in still_holds
+    A change is detected by the flag itself or by updated_at moving."""
     still, changed, gone = [], [], []
     for m in matches:
         try:
@@ -303,11 +350,14 @@ def reread_orders(client: MCPClient, matches: list[dict], today: date) -> dict:
                 so = client.call("SalesOrder.get", {"id": o["sales_order_id"]})
             except MCPError:
                 so = None
-        if m["rule"] in classify_order(o, so, today):
-            still.append(m)
-        else:
-            changed.append({"order_number": m["order_number"], "rule": m["rule"],
-                            "now": {"status": o.get("status"),
+        holds = m["rule"] in classify_order(o, so, today)
+        moved = bool(m.get("order_updated_at")) and o.get("updated_at") != m["order_updated_at"]
+        if holds:
+            still.append({**m, "changed_since_snapshot": moved})
+        if moved or not holds:
+            changed.append({"order_number": m["order_number"], "rule": m["rule"], "flag_still_holds": holds,
+                            "now": {"status": o.get("status"), "updated_at": o.get("updated_at"),
+                                    "notes": (o.get("notes") or "")[:200],
                                     "sales_order_status": (so or {}).get("status"),
                                     "delivered_status": (so or {}).get("delivered_status")}})
     return {"still_holds": still, "changed_since_snapshot": changed, "unreadable": gone}

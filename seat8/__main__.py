@@ -117,6 +117,9 @@ def main(argv: list[str] | None = None) -> int:
 
     a = p.parse_args(argv)
     a.biz = getattr(a, "biz", None)
+    for stream in (sys.stdout, sys.stderr):  # Windows consoles default to cp1252 (no ₹)
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     try:
         return a.fn(a)
     except (RuntimeError, MCPError) as e:

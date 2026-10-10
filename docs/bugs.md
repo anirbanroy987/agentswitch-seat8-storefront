@@ -39,3 +39,16 @@ test coupon with an inverted window and observe whether it is rejected.
 
 96 of the order lines across 109 WebOrders have `name: null`, so order lines cannot be shown by product
 without a per-line `Item.get`. Expected: the line name snapshot is filled at checkout like `item_id`.
+
+## B5 · `AgentMemory.list` `search` does not match memory content — candidate
+
+```bash
+uv run python -m seat8 call AgentMemory.get '{"id": "6be85377-de01-457a-a443-da9cf6ba4639"}'   # content: "T08 smoke test ... storefront agent can write ..."
+uv run python -m seat8 call AgentMemory.list '{"search": "smoke", "limit": 5}'                  # total: 0
+uv run python -m seat8 call AgentMemory.list '{"limit": 5}'                                     # the same row is listed
+```
+
+Expected: `search` finds a memory by words in its `content` (the only free-text field an agent writes).
+Actual: `total: 0` for "smoke", "T08 smoke test" and "storefront agent", although the row is returned by an
+unfiltered list (REST `/api/AgentMemory?search=smoke` also returns 0). An agent cannot recall its own memory
+by topic; it must page through every row.

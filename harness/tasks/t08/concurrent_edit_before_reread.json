@@ -1,0 +1,22 @@
+{
+  "id": "concurrent_edit_before_reread",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": "paid_pending",
+  "interference": "note_on_fixture",
+  "params": {},
+  "instances": [
+    "suryodaya"
+  ],
+  "prompt": "Find any order where payment and stock disagree.",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "payment_stock_mismatch": "answered"
+    }
+  },
+  "verifiers": [
+    "fixture_change_detected"
+  ],
+  "checks": "Concurrency: the fixture is flagged paid_not_released in the snapshot. While the agent is paused between its snapshot and its re-read, the harness edits the fixture's notes (the only edit a pending_payment WebOrder accepts, so the one another team could really make). The DB must still hold that edit; the agent must report the order as changed during the query, with the new values; because its flag still holds, it must still be in the escalation set."
+}
