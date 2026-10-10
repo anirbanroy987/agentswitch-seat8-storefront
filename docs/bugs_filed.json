@@ -1,0 +1,37 @@
+[
+  {
+    "key": "B1",
+    "page": "MCP tools/list (Storefront seat)",
+    "id": "e0999ecb-c38c-4aeb-9019-fa0f0d59c4c1",
+    "response": null,
+    "description": "endpoint.inventory.shipping_board is in the Storefront seat's tools/list, but every call to it is refused with 403.\n\nWhat I did:\n1. tools/list -> includes endpoint.inventory.shipping_board (\"Dispatch planning board ... Read-only.\").\n2. tools.search {\"query\": \"inventory level\"} -> returns it with in_tools_list: true, risk: read.\n3. tools/call endpoint.inventory.shipping_board {}.\n\nExpected: the brief (section 6) says a tool you may not use is absent from the list, not refused when called. So either the tool is absent for this seat, or it is callable.\n\nActual: the call returns isError: \"This view reads DeliveryChallan, and your role is not granted read on it. The endpoint's own gate authorises one entity; it does not authorise the others the view consumes. {\\\"code\\\": \\\"request_refused\\\", \\\"status\\\": 403}\".\n\nImpact: catalogue scoping and endpoint gating disagree, so an agent that plans from tools/list or tools.search picks a tool it can never use.\n\nSeat: Storefront (team08; roles sales_user, user, agent_user; allowed_apps storefront, agent, crm). Business: Suryodaya Precision Works. Reproducible: yes, every attempt on 2026-10-10."
+  },
+  {
+    "key": "B3",
+    "page": "Storefront > Coupons",
+    "id": "63ba7569-7a2e-4a8d-8007-fca79e50462d",
+    "response": null,
+    "description": "Coupon.create accepts a validity window that ends before it starts (valid_to earlier than valid_from).\n\nWhat I did:\n1. Coupon.create {\"code\": \"T08-REPRO-INVERTED\", \"type\": \"percentage\", \"value\": 1, \"valid_from\": \"2027-06-30\", \"valid_to\": \"2027-01-01\", \"is_active\": false}.\n2. Coupon.get id b61a89cf-7b4a-457c-a28d-786ac8787e73.\n\nExpected: rejected with an invalid_arguments error on valid_to, because a window that ends before it starts can never be open.\n\nActual: accepted and stored as given (valid_from 2027-06-30, valid_to 2027-01-01). The platform does validate valid_to against the creation date (valid_to 2026-01-01 is rejected with \"Valid To cannot be before 2026-10-10, the date this record was created\"), but not against valid_from.\n\nCorroboration: 48 of the 105 coupons already in the book have valid_to before valid_from (e.g. VC8379/1862: 2025-12-27 to 2025-12-14), and 38 of those 48 are is_active = 1.\n\nThe repro coupon T08-REPRO-INVERTED was created inactive and is safe to delete.\n\nSeat: Storefront (team08; roles sales_user, user, agent_user; allowed_apps storefront, agent, crm). Business: Suryodaya Precision Works. Reproducible: yes, every attempt on 2026-10-10."
+  },
+  {
+    "key": "B5",
+    "page": "Agent memory (AgentMemory.list)",
+    "id": "9218a6f3-7ffd-4ff7-92ca-2eae70d25234",
+    "response": null,
+    "description": "AgentMemory.list with `search` never matches a memory's content, so an agent cannot recall its own memories by topic.\n\nWhat I did:\n1. AgentMemory.create {\"category\": \"fact\", \"source\": \"system\", \"content\": \"T08 smoke test 2026-10-10T20:28:08: storefront agent can write to its own AgentMemory.\"} -> id 6be85377-de01-457a-a443-da9cf6ba4639.\n2. AgentMemory.get on that id -> returns the content above.\n3. AgentMemory.list {\"search\": \"smoke\"}, {\"search\": \"T08 smoke test\"}, {\"search\": \"storefront agent\"}, and REST GET /api/AgentMemory?search=smoke.\n4. AgentMemory.list {\"limit\": 50} with no search.\n\nExpected: steps 3 find the row, since content is the only free-text field an agent writes and search is how it recalls by topic.\n\nActual: all four searches return total: 0, while the unfiltered list in step 4 returns the row.\n\nImpact: memory recall has to page through every row.\n\nSeat: Storefront (team08; roles sales_user, user, agent_user; allowed_apps storefront, agent, crm). Business: Suryodaya Precision Works. Reproducible: yes, every attempt on 2026-10-10."
+  },
+  {
+    "key": "B6",
+    "page": "Storefront > Web orders",
+    "id": "92c0f880-b9eb-463d-a76e-af9cc28d0409",
+    "response": null,
+    "description": "WebOrder.create accepts a caller-supplied payment_gateway_payment_id, so an unpaid order carries a payment reference that no gateway issued, and it can no longer be corrected.\n\nWhat I did:\n1. WebOrder.create {\"customer_name\": \"[T08 fixture] paid-not-released\", \"customer_email\": \"t08-fixture@example.com\", \"payment_method\": \"razorpay\", \"payment_provider\": \"simulated\", \"payment_gateway_payment_id\": \"SIM-T08-FIXTURE\", \"items\": [1 line]} -> WEB-2026-00110 (id 5f14edff-201a-4a4a-90a2-ede37f787258).\n2. WebOrder.get on that id.\n3. WebOrder.update {\"id\": ..., \"payment_gateway_payment_id\": \"\"}.\n\nExpected: payment reference fields are set only by the payment flow (endpoint.storefront.payment.verify / WebOrder.confirm_payment) and are rejected or ignored on create, the same way a redemption counter should be derived rather than written.\n\nActual: step 2 shows status pending_payment, payment_gateway_payment_id SIM-T08-FIXTURE, funding_amount null. Step 3 is refused: \"Cannot modify WebOrder in 'pending_payment' status. Only notes/tags/assignments can be changed.\" So a fabricated reference is accepted at creation and then locked.\n\nImpact: anything that treats a gateway payment id as evidence of payment (reconciliation, an agent checking payment against fulfilment) sees an order as paid when no payment was taken.\n\nWEB-2026-00110 is Team 08's harness fixture and is kept on purpose as the repro.\n\nSeat: Storefront (team08; roles sales_user, user, agent_user; allowed_apps storefront, agent, crm). Business: Suryodaya Precision Works. Reproducible: yes, every attempt on 2026-10-10."
+  },
+  {
+    "key": "B7",
+    "page": "API: /api/accounting/locale",
+    "id": "24ff65b2-1310-42ef-b61c-76aaa0635246",
+    "response": null,
+    "description": "GET /api/accounting/locale returns 403 for non-accounting seats, although the capstone brief tells every agent to read it to learn its tax regime.\n\nWhat I did: as team08 (Storefront seat), GET /api/accounting/locale with a valid bearer token. Also checked tools/list for a locale tool.\n\nExpected: the Session 20 brief (section 6) says \"GET /api/accounting/locale tells your agent which regime it is in\" and grades every agent on working in both jurisdictions. So any authenticated seat should be able to read the locale (read-only), or the brief should name the per-app equivalent.\n\nActual: 403 {\"detail\": \"App 'accounting' is not enabled for your account\"}. tools/list has no accounting locale tool for this seat. The only locale available to Storefront is endpoint.storefront.locale, which does return country, currency and tax regime. Seats with no app-specific locale endpoint have no documented way to learn their regime.\n\nSeat: Storefront (team08; roles sales_user, user, agent_user; allowed_apps storefront, agent, crm). Business: Suryodaya Precision Works. Reproducible: yes, every attempt on 2026-10-10."
+  }
+]

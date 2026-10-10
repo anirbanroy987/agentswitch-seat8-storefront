@@ -75,6 +75,21 @@ class MCPClient:
         except ValueError:
             raise MCPError(f"GET {path}: non-JSON body {raw[:200]!r}", TRANSIENT) from None
 
+    def rest_post(self, path: str, body: dict) -> Any:
+        """Only for the few platform endpoints that are not MCP tools (e.g. /api/bug-report)."""
+        req = urllib.request.Request(self.base_url + path, method="POST",
+                                     data=json.dumps(body).encode(), headers=self._headers())
+        try:
+            raw = urllib.request.urlopen(req, timeout=self.timeout, context=self._ssl).read()
+        except urllib.error.HTTPError as e:
+            raise self._http_error(path, e) from None
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+            raise MCPError(f"POST {path}: {e}", TRANSIENT) from None
+        try:
+            return json.loads(raw)
+        except ValueError:
+            return {"raw": raw[:500].decode("utf-8", "replace")}
+
     # ── MCP ─────────────────────────────────────────────────────────────────
     def initialize(self) -> dict:
         result = self._rpc("initialize", {

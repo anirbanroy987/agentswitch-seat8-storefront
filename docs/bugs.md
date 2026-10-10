@@ -1,9 +1,11 @@
 # Platform bug candidates (Team 08, Storefront seat)
 
+Filed reports and their ids: [`BUGS_FILED.md`](BUGS_FILED.md).
+
 Found on Suryodaya, 2026-10-10. Status column: candidate → filed (with report id) → confirmed/fixed.
 Each is reproducible with the `seat8 call` command shown.
 
-## B1 · `endpoint.inventory.shipping_board` is in tools/list but refused when called — candidate
+## B1 · `endpoint.inventory.shipping_board` is in tools/list but refused when called — filed e0999ecb
 
 The brief (§6): "A tool you may not use is absent from the list, not refused when called."
 
@@ -17,7 +19,7 @@ Actual: listed (`in_tools_list: true`, risk `read`), but the call returns `isErr
 `"This view reads DeliveryChallan, and your role is not granted read on it." {"code": "request_refused", "status": 403}`.
 An agent that plans from tools/list will pick a tool it can never use.
 
-## B2 · Coupon `used_count` is not backed by orders and can exceed `usage_limit` — candidate
+## B2 · Coupon `used_count` is not backed by orders and can exceed `usage_limit` — not refiled (Team 08 report of 2026-09-25 covers it)
 
 ```bash
 uv run python -m seat8 call Coupon.list '{"limit": 200}'
@@ -29,18 +31,18 @@ and 79 report `used_count > 0` while no WebOrder carries their code. `used_count
 argument of `Coupon.create`/`Coupon.update`, so a redemption counter that should be derived from orders
 can be written directly. Expected: `used_count` derived (read-only) and enforced against `usage_limit`.
 
-## B3 · Coupon accepts `valid_to` earlier than `valid_from` — candidate (needs a create/update repro)
+## B3 · Coupon accepts `valid_to` earlier than `valid_from` — filed 63ba7569 (repro: T08-REPRO-INVERTED)
 
 48 of 105 coupons have an inverted validity window (e.g. `VC8379/1862`: from 2025-12-27 to 2025-12-14).
 Not yet reproduced with a write, because that would add a row to the shared book; to confirm, create one
 test coupon with an inverted window and observe whether it is rejected.
 
-## B4 · WebOrder lines without item names — candidate
+## B4 · WebOrder lines without item names — not filed (optional field)
 
 96 of the order lines across 109 WebOrders have `name: null`, so order lines cannot be shown by product
 without a per-line `Item.get`. Expected: the line name snapshot is filled at checkout like `item_id`.
 
-## B5 · `AgentMemory.list` `search` does not match memory content — candidate
+## B5 · `AgentMemory.list` `search` does not match memory content — filed 9218a6f3
 
 ```bash
 uv run python -m seat8 call AgentMemory.get '{"id": "6be85377-de01-457a-a443-da9cf6ba4639"}'   # content: "T08 smoke test ... storefront agent can write ..."
@@ -52,3 +54,22 @@ Expected: `search` finds a memory by words in its `content` (the only free-text 
 Actual: `total: 0` for "smoke", "T08 smoke test" and "storefront agent", although the row is returned by an
 unfiltered list (REST `/api/AgentMemory?search=smoke` also returns 0). An agent cannot recall its own memory
 by topic; it must page through every row.
+
+## B6 · `WebOrder.create` accepts a caller-supplied payment reference — filed 92c0f880
+
+```bash
+uv run python -m seat8 call WebOrder.list '{"customer_name": "[T08 fixture] paid-not-released", "limit": 1}'
+```
+
+WEB-2026-00110 was created with `payment_gateway_payment_id: SIM-T08-FIXTURE`; it is `pending_payment` with
+`funding_amount: null`, and `WebOrder.update` can no longer clear the field ("Only notes/tags/assignments can be
+changed").
+
+## B7 · `/api/accounting/locale` is 403 for non-accounting seats — filed 24ff65b2
+
+```bash
+uv run python -m seat8 call endpoint.storefront.locale '{}'     # works: country, currency, tax regime
+```
+
+`GET /api/accounting/locale` returns 403 "App 'accounting' is not enabled for your account", although the
+Session 20 brief (section 6) tells every agent to read it to learn its regime.
