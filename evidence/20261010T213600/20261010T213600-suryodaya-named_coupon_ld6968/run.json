@@ -1,0 +1,149 @@
+{
+  "run_id": "20261010T213600-suryodaya-named_coupon_ld6968",
+  "question": "How did coupon LD6968/1860 perform?",
+  "business": "in",
+  "git_commit": "f85a721",
+  "started_at": "2026-10-10T21:46:46+0530",
+  "status": "done",
+  "finding": {
+    "run_id": "20261010T213600-suryodaya-named_coupon_ld6968",
+    "business": "Suryodaya Precision Works",
+    "dry_run": true,
+    "path": "graph",
+    "asks": [
+      "coupon_performance"
+    ],
+    "sections": {
+      "coupon_performance": {
+        "status": "answered",
+        "asked_for": "LD6968/1860",
+        "book_health": {
+          "coupons": 105,
+          "active": 81,
+          "orders_with_any_coupon": 0,
+          "used_count_claimed_total": 1002596,
+          "inverted_validity_window": {
+            "count": 48,
+            "codes": [
+              "VC8379/1862",
+              "PS8717/1859",
+              "VC6763/1854",
+              "FS8854/1852",
+              "VC5146/1850",
+              "MS2544/1848",
+              "PS3963/1846",
+              "DG1877/1844",
+              "BV6251/1843",
+              "VP4357/1841"
+            ]
+          },
+          "used_beyond_usage_limit": {
+            "count": 30,
+            "codes": [
+              "HARNESSTEST1790342483",
+              "PS8717/1859",
+              "HKS6280/1858",
+              "DG1480/1853",
+              "VC3363/1851",
+              "VC5146/1850",
+              "PS3963/1846",
+              "BV6251/1843",
+              "S6829/1838",
+              "LD3830/1829"
+            ]
+          },
+          "used_count_without_orders": {
+            "count": 79,
+            "codes": [
+              "HTL43792",
+              "HTLIM43753",
+              "HTLIMIT43717",
+              "HARNESSTEST1790342483",
+              "LD6968/1860",
+              "PS8717/1859",
+              "HKS6280/1858",
+              "AP4384/1856",
+              "VC6763/1854",
+              "DG1480/1853"
+            ]
+          }
+        },
+        "coupon": {
+          "id": "c401f609-7815-4e61-af95-c5a6d2e5eb62",
+          "code": "LD6968/1860",
+          "type": "percentage",
+          "value": 10.0,
+          "valid_from": "2026-03-31",
+          "valid_to": "2026-04-12",
+          "is_active": 1,
+          "usage_limit": 0.0,
+          "used_count": 42.0,
+          "description": null
+        },
+        "orders_using_it": 0,
+        "order_numbers": [],
+        "by_status": {},
+        "paid_orders": 0,
+        "paid_revenue": 0,
+        "discount_given": 0,
+        "avg_paid_order_with_coupon": null,
+        "avg_paid_order_without_coupon_same_window": null,
+        "used_count_recorded": 42.0,
+        "used_count_matches_orders": false,
+        "window_inverted": false,
+        "over_usage_limit": false
+      }
+    },
+    "refusals": [],
+    "context": {
+      "country": "IN",
+      "base_currency": "INR",
+      "currency_symbol": "₹",
+      "locale_tag": "en-IN",
+      "tax_regime": "gst",
+      "tax_regime_label": "GST (Goods & Services Tax)",
+      "postal_code_label": "PIN Code",
+      "state_label": "State",
+      "date_format": "dd/MM/yyyy",
+      "payment_methods": {
+        "razorpay": "Razorpay",
+        "bank_transfer": "Bank Transfer / NEFT",
+        "cod": "Cash on Delivery"
+      }
+    },
+    "snapshot": {
+      "taken_at": "2026-10-10T21:47:06+0530",
+      "orders": 110,
+      "coupons": 105,
+      "sales_orders_read": 0,
+      "sales_order_errors": 0,
+      "pagination_complete": true
+    }
+  },
+  "answer": "Regarding the performance of coupon LD6968/1860 for Suryodaya Precision Works:\n\nThe coupon has been used 42 times, but there are 0 associated orders recorded in the system. Consequently, the total discount given and paid revenue are ₹0. The coupon is currently active, with a 10% discount value and no usage limit.\n\nRegarding the broader coupon book health:\n- There are 105 total coupons, with 81 currently active.\n- 48 coupons have an inverted validity window.\n- 30 coupons have been used beyond their usage limit.\n- 79 coupons show usage counts without corresponding orders.\n\nPlease note that this analysis was performed as a dry run; no escalation was filed. This data is a live snapshot taken at 10/10/2026 21:47:06.",
+  "warnings": [],
+  "write": false,
+  "today": "2026-10-10",
+  "model": "gemini-3.1-flash-lite",
+  "intent": {
+    "asks": [
+      "coupon_performance"
+    ],
+    "coupon_ref": "LD6968/1860",
+    "order_refs": [],
+    "order_claims": [],
+    "change_request": null,
+    "out_of_scope": [],
+    "other": null,
+    "parser": "llm"
+  },
+  "finding_memory_id": "45196ce0-c1d8-477c-b5d2-610aee9720fc",
+  "narration": "llm",
+  "path": "graph",
+  "llm_usage": {
+    "calls": 2,
+    "input_tokens": 1679,
+    "output_tokens": 262
+  },
+  "ended_at": "2026-10-10T21:47:32+0530"
+}

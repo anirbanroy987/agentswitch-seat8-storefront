@@ -1,0 +1,13 @@
+
+[run 20261010T213600-suryodaya-mismatches_only · status done · dry run · runs/20261010T213600-suryodaya-mismatches_only/]
+I have reviewed the payment and stock data for Suryodaya Precision Works. This analysis is based on a live snapshot taken at 10/10/2026 21:43:25.
+
+Regarding the payment and stock mismatches, I identified 110 orders. Because this was a dry run, no changes were made; however, an escalation would be filed to the Stock seat for the affected orders (WEB-2026-00014, WEB-2026-00022, WEB-2026-00044, WEB-2026-00056, WEB-2026-00074, WEB-2026-00087, WEB-2026-00089, WEB-2026-00092, WEB-2026-00100, and WEB-2026-00110).
+
+My findings are as follows:
+* Stock held for cancelled orders: 6 instances (e.g., WEB-2026-00044, WEB-2026-00014, WEB-2026-00089, WEB-2026-00022, WEB-2026-00056, and WEB-2026-00092). In these cases, the sales order remains confirmed and undelivered despite the order being cancelled.
+* Shipped unpaid: 3 instances (WEB-2026-00074, WEB-2026-00100, and WEB-2026-00087). These orders are marked as delivered, but no payment has been recorded.
+* Paid not released: 1 instance (WEB-2026-00110). Payment was captured, but the order status remains pending_payment.
+* Unpaid holding stock: 83 instances.
+
+I cannot verify current stock levels as the inventory application is not enabled for this account, resulting in a 403 error when attempting to access stock-related entities. Please contact the Stock seat team to investigate the physical inventory status for these orders.

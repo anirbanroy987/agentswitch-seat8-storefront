@@ -1,0 +1,107 @@
+{
+  "run_id": "20261010T213600-suryodaya-order_facts_delivered_unpaid",
+  "question": "Was WEB-2026-00074 paid before it was delivered?",
+  "business": "in",
+  "git_commit": "f85a721",
+  "started_at": "2026-10-10T21:47:41+0530",
+  "status": "done",
+  "finding": {
+    "run_id": "20261010T213600-suryodaya-order_facts_delivered_unpaid",
+    "business": "Suryodaya Precision Works",
+    "dry_run": true,
+    "path": "graph",
+    "asks": [
+      "order_check"
+    ],
+    "sections": {
+      "order_check": {
+        "status": "answered",
+        "orders": [
+          {
+            "status": "answered",
+            "order_number": "WEB-2026-00074",
+            "order_status": "pending_payment",
+            "order_date": "2026-08-26",
+            "payment_method": "razorpay",
+            "payment_captured": false,
+            "grand_total": 433163181072.07,
+            "sales_order_number": "SO-2026-00058",
+            "sales_order_status": "confirmed",
+            "delivered_status": "delivered",
+            "delivered": true,
+            "flags": [
+              "shipped_unpaid"
+            ],
+            "claims": [
+              {
+                "claim": "paid",
+                "holds": false
+              },
+              {
+                "claim": "delivered",
+                "holds": true
+              }
+            ],
+            "premise_false": true
+          }
+        ]
+      }
+    },
+    "refusals": [],
+    "context": {
+      "country": "IN",
+      "base_currency": "INR",
+      "currency_symbol": "₹",
+      "locale_tag": "en-IN",
+      "tax_regime": "gst",
+      "tax_regime_label": "GST (Goods & Services Tax)",
+      "postal_code_label": "PIN Code",
+      "state_label": "State",
+      "date_format": "dd/MM/yyyy",
+      "payment_methods": {
+        "razorpay": "Razorpay",
+        "bank_transfer": "Bank Transfer / NEFT",
+        "cod": "Cash on Delivery"
+      }
+    },
+    "snapshot": {
+      "taken_at": "2026-10-10T21:48:08+0530",
+      "orders": 110,
+      "coupons": 0,
+      "sales_orders_read": 79,
+      "sales_order_errors": 0,
+      "pagination_complete": true
+    }
+  },
+  "answer": "Regarding your request for order status:\n\nOrder WEB-2026-00074 (Sales Order SO-2026-00058) is currently marked as delivered but remains in pending_payment status. The total amount due is ₹433,163,181,072.07.\n\nPlease note that your premise regarding the payment is incorrect; the claim that this order is paid is false (holds=false). An escalation regarding this unpaid delivered order WOULD be filed (dry run).\n\nThis data is based on a live snapshot taken at 10/10/2026 21:48:08+0530.",
+  "warnings": [],
+  "write": false,
+  "today": "2026-10-10",
+  "model": "gemini-3.1-flash-lite",
+  "intent": {
+    "asks": [
+      "order_check"
+    ],
+    "coupon_ref": null,
+    "order_refs": [
+      "WEB-2026-00074"
+    ],
+    "order_claims": [
+      "paid",
+      "delivered"
+    ],
+    "change_request": null,
+    "out_of_scope": [],
+    "other": null,
+    "parser": "llm"
+  },
+  "finding_memory_id": "f4ace6a8-31f2-473d-99e3-b2cb338edfa4",
+  "narration": "llm",
+  "path": "graph",
+  "llm_usage": {
+    "calls": 2,
+    "input_tokens": 1121,
+    "output_tokens": 233
+  },
+  "ended_at": "2026-10-10T21:49:37+0530"
+}

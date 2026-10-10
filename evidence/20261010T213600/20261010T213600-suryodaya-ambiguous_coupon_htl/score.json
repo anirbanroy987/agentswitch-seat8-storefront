@@ -1,0 +1,80 @@
+{
+  "task_id": "ambiguous_coupon_htl",
+  "verdict": "pass",
+  "checks": [
+    {
+      "name": "call log is intact",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "run finished",
+      "status": "pass",
+      "detail": "done"
+    },
+    {
+      "name": "finding read back from AgentMemory",
+      "status": "pass",
+      "detail": "51973df8-de06-4c77-a7fb-4d754d0ffcbe"
+    },
+    {
+      "name": "finding belongs to this run",
+      "status": "pass",
+      "detail": {
+        "db": "20261010T213600-suryodaya-ambiguous_coupon_htl",
+        "run": "20261010T213600-suryodaya-ambiguous_coupon_htl"
+      }
+    },
+    {
+      "name": "finding written by this seat",
+      "status": "pass",
+      "detail": "da80ee60-9a33-419d-9d1f-2316dcc44d42"
+    },
+    {
+      "name": "database finding matches the run's conclusion",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "only permitted writes",
+      "status": "pass",
+      "detail": [
+        "AgentMemory.create"
+      ]
+    },
+    {
+      "name": "exactly one finding recorded",
+      "status": "pass",
+      "detail": 1
+    },
+    {
+      "name": "path is graph",
+      "status": "pass",
+      "detail": "graph"
+    },
+    {
+      "name": "coupon_performance is ambiguous",
+      "status": "pass",
+      "detail": "ambiguous"
+    },
+    {
+      "name": "answer states only what the finding contains",
+      "status": "pass",
+      "detail": "clean"
+    },
+    {
+      "name": "asked which coupon instead of picking one",
+      "status": "pass",
+      "detail": "ambiguous"
+    },
+    {
+      "name": "candidates are real matching coupons",
+      "status": "pass",
+      "detail": [
+        "HTL43792",
+        "HTLIM43753",
+        "HTLIMIT43717"
+      ]
+    }
+  ]
+}

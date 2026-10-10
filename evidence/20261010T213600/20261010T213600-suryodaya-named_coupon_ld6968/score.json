@@ -1,0 +1,97 @@
+{
+  "task_id": "named_coupon_ld6968",
+  "verdict": "pass",
+  "checks": [
+    {
+      "name": "call log is intact",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "run finished",
+      "status": "pass",
+      "detail": "done"
+    },
+    {
+      "name": "finding read back from AgentMemory",
+      "status": "pass",
+      "detail": "45196ce0-c1d8-477c-b5d2-610aee9720fc"
+    },
+    {
+      "name": "finding belongs to this run",
+      "status": "pass",
+      "detail": {
+        "db": "20261010T213600-suryodaya-named_coupon_ld6968",
+        "run": "20261010T213600-suryodaya-named_coupon_ld6968"
+      }
+    },
+    {
+      "name": "finding written by this seat",
+      "status": "pass",
+      "detail": "da80ee60-9a33-419d-9d1f-2316dcc44d42"
+    },
+    {
+      "name": "database finding matches the run's conclusion",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "only permitted writes",
+      "status": "pass",
+      "detail": [
+        "AgentMemory.create"
+      ]
+    },
+    {
+      "name": "exactly one finding recorded",
+      "status": "pass",
+      "detail": 1
+    },
+    {
+      "name": "path is graph",
+      "status": "pass",
+      "detail": "graph"
+    },
+    {
+      "name": "coupon_performance is answered",
+      "status": "pass",
+      "detail": "answered"
+    },
+    {
+      "name": "answer states only what the finding contains",
+      "status": "pass",
+      "detail": "clean"
+    },
+    {
+      "name": "answered for the named coupon",
+      "status": "pass",
+      "detail": "answered"
+    },
+    {
+      "name": "orders using it match the database",
+      "status": "pass",
+      "detail": {
+        "agent": 0,
+        "db": 0
+      }
+    },
+    {
+      "name": "used_count reported as recorded",
+      "status": "pass",
+      "detail": {
+        "agent": 42.0,
+        "db": 42.0
+      }
+    },
+    {
+      "name": "used_count vs orders agreement stated correctly",
+      "status": "pass",
+      "detail": false
+    },
+    {
+      "name": "no revenue invented when no order used it",
+      "status": "pass",
+      "detail": 0
+    }
+  ]
+}

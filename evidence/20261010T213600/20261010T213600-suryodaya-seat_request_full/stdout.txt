@@ -1,0 +1,13 @@
+
+[run 20261010T213600-suryodaya-seat_request_full · status done · dry run · runs/20261010T213600-suryodaya-seat_request_full/]
+Regarding your request for coupon performance, I cannot provide this information as no coupon in the system is identified as a "launch coupon." Please provide the specific coupon code you wish to measure. Additionally, note that 0 of the 110 web orders currently carry any coupon code, preventing redemption measurement from order data.
+
+Regarding payment and stock mismatches, I have analyzed 110 orders. An escalation would be filed (dry run) to the Stock seat, as my access to inventory tools is restricted. The following issues were identified:
+
+*   **Stock held for cancelled orders:** Orders WEB-2026-00044, WEB-2026-00014, WEB-2026-00089, WEB-2026-00022, WEB-2026-00056, and WEB-2026-00092 are cancelled, but their associated sales orders remain confirmed and undelivered, causing stock to remain committed.
+*   **Shipped unpaid:** Orders WEB-2026-00074, WEB-2026-00100, and WEB-2026-00087 have been delivered, but no payment has been recorded.
+*   **Paid not released:** Order WEB-2026-00110 has a captured payment but remains in a pending payment status.
+
+There are also 83 unpaid orders currently holding stock.
+
+This data is a live snapshot taken at 10/10/2026 21:56:30.

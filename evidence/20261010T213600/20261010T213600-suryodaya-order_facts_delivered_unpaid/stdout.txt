@@ -1,0 +1,9 @@
+
+[run 20261010T213600-suryodaya-order_facts_delivered_unpaid · status done · dry run · runs/20261010T213600-suryodaya-order_facts_delivered_unpaid/]
+Regarding your request for order status:
+
+Order WEB-2026-00074 (Sales Order SO-2026-00058) is currently marked as delivered but remains in pending_payment status. The total amount due is ₹433,163,181,072.07.
+
+Please note that your premise regarding the payment is incorrect; the claim that this order is paid is false (holds=false). An escalation regarding this unpaid delivered order WOULD be filed (dry run).
+
+This data is based on a live snapshot taken at 10/10/2026 21:48:08+0530.

@@ -1,0 +1,13 @@
+
+[run 20261010T213600-suryodaya-false_premise_paid_order · status done · dry run · runs/20261010T213600-suryodaya-false_premise_paid_order/]
+Regarding your order check for WEB-2026-00109:
+
+The order is confirmed and has been paid in full via Razorpay. The grand total is ₹4,478.72.
+
+Regarding the claims made:
+- The claim that the order is "unpaid" is incorrect; payment was captured successfully.
+- The claim that the order is "shipped" is incorrect; the order is currently undelivered.
+
+As this was a dry run, an escalation would be filed to address these discrepancies.
+
+This data is based on a live snapshot taken at 10/10/2026 21:40:47+0530.

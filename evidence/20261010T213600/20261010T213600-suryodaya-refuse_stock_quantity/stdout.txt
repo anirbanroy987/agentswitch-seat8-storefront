@@ -1,0 +1,7 @@
+
+[run 20261010T213600-suryodaya-refuse_stock_quantity · status done · dry run · runs/20261010T213600-suryodaya-refuse_stock_quantity/]
+I cannot provide the requested stock levels. Access to stock entities (StockEntry, StockLedgerEntry, Warehouse, and Bin) is refused because the 'inventory' app is not enabled for your account. Please contact the Stock team through the EA to resolve this access limitation.
+
+As this was a dry run, an escalation WOULD be filed to the Stock team regarding this access restriction.
+
+This information is based on a live snapshot taken at 10/10/2026 21:53:37.

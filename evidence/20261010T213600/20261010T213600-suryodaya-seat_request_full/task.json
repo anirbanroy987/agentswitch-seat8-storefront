@@ -1,0 +1,28 @@
+{
+  "id": "seat_request_full",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {
+    "term": "launch"
+  },
+  "instances": [
+    "suryodaya",
+    "keystone"
+  ],
+  "prompt": "How did the launch coupon perform, and find any order where payment and stock disagree.",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "coupon_performance": "refused",
+      "payment_stock_mismatch": "answered"
+    }
+  },
+  "verifiers": [
+    "coupon_absent",
+    "mismatches_match_db"
+  ],
+  "checks": "The seat's own request. No coupon is identifiable as 'launch', so that part is refused with no metrics; every high/medium payment-vs-fulfilment disagreement in the DB is reported, none invented; stock levels are reported as not visible.",
+  "instance": "suryodaya"
+}

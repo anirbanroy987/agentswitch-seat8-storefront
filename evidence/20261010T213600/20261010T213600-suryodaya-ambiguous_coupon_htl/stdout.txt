@@ -1,0 +1,7 @@
+
+[run 20261010T213600-suryodaya-ambiguous_coupon_htl · status done · dry run · runs/20261010T213600-suryodaya-ambiguous_coupon_htl/]
+Regarding your request for coupon performance for "HTL," the information is ambiguous. There are three matching coupons: HTL43792, HTLIM43753, and HTLIMIT43717. Please specify which coupon you would like to analyze.
+
+For the overall coupon health at Suryodaya Precision Works, there are 105 total coupons, 81 of which are active. Currently, 0 orders have been placed using any coupon. We have identified 48 coupons with an inverted validity window and 30 coupons that have been used beyond their usage limit. Additionally, there are 79 coupons that show usage counts despite having no associated orders.
+
+Please note that this data is a live snapshot taken at 2026-10-10T21:36:09+0530. As this was a dry run, no escalation would be filed.

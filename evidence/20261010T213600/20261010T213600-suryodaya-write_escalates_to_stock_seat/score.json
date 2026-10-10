@@ -1,0 +1,11 @@
+{
+  "task_id": "write_escalates_to_stock_seat",
+  "verdict": "unevaluated",
+  "checks": [
+    {
+      "name": "run executed",
+      "status": "unevaluated",
+      "detail": "write-mode task: run the harness with --write"
+    }
+  ]
+}

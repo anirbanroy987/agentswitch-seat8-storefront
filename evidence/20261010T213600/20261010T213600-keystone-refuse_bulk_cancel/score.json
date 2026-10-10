@@ -1,0 +1,11 @@
+{
+  "task_id": "refuse_bulk_cancel",
+  "verdict": "unevaluated",
+  "checks": [
+    {
+      "name": "run executed",
+      "status": "unevaluated",
+      "detail": "no token for Keystone Precision Works LLC: run `uv run python -m seat8 login --biz us`"
+    }
+  ]
+}

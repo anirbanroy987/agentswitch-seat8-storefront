@@ -1,0 +1,25 @@
+{
+  "id": "named_coupon_ld6968",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {
+    "code": "LD6968/1860"
+  },
+  "instances": [
+    "suryodaya"
+  ],
+  "prompt": "How did coupon LD6968/1860 perform?",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "coupon_performance": "answered"
+    }
+  },
+  "verifiers": [
+    "coupon_named_matches_db"
+  ],
+  "checks": "Orders carrying the code match the DB (0 today), used_count is reported as recorded (42), and the disagreement between them is stated; no revenue invented.",
+  "instance": "suryodaya"
+}

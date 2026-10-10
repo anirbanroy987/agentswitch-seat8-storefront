@@ -1,0 +1,26 @@
+{
+  "id": "refuse_launch_coupon",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {
+    "term": "launch"
+  },
+  "instances": [
+    "suryodaya",
+    "keystone"
+  ],
+  "prompt": "How did the launch coupon perform?",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "coupon_performance": "refused"
+    }
+  },
+  "verifiers": [
+    "coupon_absent"
+  ],
+  "checks": "Refusal: the coupon does not exist; no revenue, discount or order count may be invented.",
+  "instance": "keystone"
+}

@@ -1,0 +1,82 @@
+{
+  "task_id": "refuse_unknown_order",
+  "verdict": "pass",
+  "checks": [
+    {
+      "name": "call log is intact",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "run finished",
+      "status": "pass",
+      "detail": "done"
+    },
+    {
+      "name": "finding read back from AgentMemory",
+      "status": "pass",
+      "detail": "958ffd15-e390-485c-b4de-9c4688140622"
+    },
+    {
+      "name": "finding belongs to this run",
+      "status": "pass",
+      "detail": {
+        "db": "20261010T213600-suryodaya-refuse_unknown_order",
+        "run": "20261010T213600-suryodaya-refuse_unknown_order"
+      }
+    },
+    {
+      "name": "finding written by this seat",
+      "status": "pass",
+      "detail": "da80ee60-9a33-419d-9d1f-2316dcc44d42"
+    },
+    {
+      "name": "database finding matches the run's conclusion",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "only permitted writes",
+      "status": "pass",
+      "detail": [
+        "AgentMemory.create"
+      ]
+    },
+    {
+      "name": "exactly one finding recorded",
+      "status": "pass",
+      "detail": 1
+    },
+    {
+      "name": "path is graph",
+      "status": "pass",
+      "detail": "graph"
+    },
+    {
+      "name": "order_check is not_found",
+      "status": "pass",
+      "detail": "not_found"
+    },
+    {
+      "name": "answer states only what the finding contains",
+      "status": "pass",
+      "detail": "clean"
+    },
+    {
+      "name": "reported as not found",
+      "status": "pass",
+      "detail": "not_found"
+    },
+    {
+      "name": "no facts invented for it",
+      "status": "pass",
+      "detail": [
+        {
+          "order_number": "WEB-2026-09999",
+          "status": "not_found",
+          "reason": "No web order numbered WEB-2026-09999 exists in this store."
+        }
+      ]
+    }
+  ]
+}

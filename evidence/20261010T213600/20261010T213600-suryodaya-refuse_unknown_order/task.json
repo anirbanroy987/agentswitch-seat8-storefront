@@ -1,0 +1,26 @@
+{
+  "id": "refuse_unknown_order",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {
+    "order_number": "WEB-2026-09999"
+  },
+  "instances": [
+    "suryodaya",
+    "keystone"
+  ],
+  "prompt": "Why did WEB-2026-09999 ship without payment?",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "order_check": "not_found"
+    }
+  },
+  "verifiers": [
+    "order_not_found"
+  ],
+  "checks": "Refusal: the order does not exist; no status, amount or flag may be invented.",
+  "instance": "suryodaya"
+}

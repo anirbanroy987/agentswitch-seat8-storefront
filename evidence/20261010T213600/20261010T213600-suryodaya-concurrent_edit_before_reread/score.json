@@ -1,0 +1,107 @@
+{
+  "task_id": "concurrent_edit_before_reread",
+  "verdict": "pass",
+  "checks": [
+    {
+      "name": "call log is intact",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "run finished",
+      "status": "pass",
+      "detail": "done"
+    },
+    {
+      "name": "finding read back from AgentMemory",
+      "status": "pass",
+      "detail": "c876adb2-60af-4546-bccf-8b7512390014"
+    },
+    {
+      "name": "finding belongs to this run",
+      "status": "pass",
+      "detail": {
+        "db": "20261010T213600-suryodaya-concurrent_edit_before_reread",
+        "run": "20261010T213600-suryodaya-concurrent_edit_before_reread"
+      }
+    },
+    {
+      "name": "finding written by this seat",
+      "status": "pass",
+      "detail": "da80ee60-9a33-419d-9d1f-2316dcc44d42"
+    },
+    {
+      "name": "database finding matches the run's conclusion",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "only permitted writes",
+      "status": "pass",
+      "detail": [
+        "AgentMemory.create"
+      ]
+    },
+    {
+      "name": "exactly one finding recorded",
+      "status": "pass",
+      "detail": 1
+    },
+    {
+      "name": "path is graph",
+      "status": "pass",
+      "detail": "graph"
+    },
+    {
+      "name": "payment_stock_mismatch is answered",
+      "status": "pass",
+      "detail": "answered"
+    },
+    {
+      "name": "answer states only what the finding contains",
+      "status": "pass",
+      "detail": "clean"
+    },
+    {
+      "name": "the other team's edit is still in the database",
+      "status": "pass",
+      "detail": "Edited by the T08 harness at 2026-10-10T21:38:46 (simulating another team's edit)."
+    },
+    {
+      "name": "fixture was flagged in the snapshot",
+      "status": "pass",
+      "detail": "WEB-2026-00110"
+    },
+    {
+      "name": "re-read reported it as changed during the query",
+      "status": "pass",
+      "detail": [
+        "WEB-2026-00110"
+      ]
+    },
+    {
+      "name": "reported with the new values",
+      "status": "pass",
+      "detail": "Edited by the T08 harness at 2026-10-10T21:38:46 (simulating another team's edit)."
+    },
+    {
+      "name": "its flag still holds, so it is still escalated",
+      "status": "pass",
+      "detail": {
+        "flag_still_holds": true,
+        "escalation_orders": [
+          "WEB-2026-00014",
+          "WEB-2026-00022",
+          "WEB-2026-00044",
+          "WEB-2026-00056",
+          "WEB-2026-00074",
+          "WEB-2026-00087",
+          "WEB-2026-00089",
+          "WEB-2026-00092",
+          "WEB-2026-00100",
+          "WEB-2026-00110"
+        ]
+      }
+    }
+  ]
+}

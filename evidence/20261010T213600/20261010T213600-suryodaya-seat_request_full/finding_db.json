@@ -1,0 +1,316 @@
+{
+  "memory_id": "7a7013de-d653-4b38-aaf8-6207a5eb5170",
+  "created_by": "da80ee60-9a33-419d-9d1f-2316dcc44d42",
+  "created_at": "2026-10-10T16:28:04.509919",
+  "run_id": "20261010T213600-suryodaya-seat_request_full",
+  "finding": {
+    "run_id": "20261010T213600-suryodaya-seat_request_full",
+    "business": "Suryodaya Precision Works",
+    "path": "graph",
+    "asks": [
+      "coupon_performance",
+      "payment_stock_mismatch"
+    ],
+    "sections": {
+      "coupon_performance": {
+        "status": "refused",
+        "asked_for": "launch coupon",
+        "book_health": {
+          "coupons": 105,
+          "active": 81,
+          "orders_with_any_coupon": 0,
+          "used_count_claimed_total": 1002596,
+          "inverted_validity_window": {
+            "count": 48,
+            "codes": [
+              "VC8379/1862",
+              "PS8717/1859",
+              "VC6763/1854",
+              "FS8854/1852",
+              "VC5146/1850",
+              "MS2544/1848",
+              "PS3963/1846",
+              "DG1877/1844",
+              "BV6251/1843",
+              "VP4357/1841"
+            ]
+          },
+          "used_beyond_usage_limit": {
+            "count": 30,
+            "codes": [
+              "HARNESSTEST1790342483",
+              "PS8717/1859",
+              "HKS6280/1858",
+              "DG1480/1853",
+              "VC3363/1851",
+              "VC5146/1850",
+              "PS3963/1846",
+              "BV6251/1843",
+              "S6829/1838",
+              "LD3830/1829"
+            ]
+          },
+          "used_count_without_orders": {
+            "count": 79,
+            "codes": [
+              "HTL43792",
+              "HTLIM43753",
+              "HTLIMIT43717",
+              "HARNESSTEST1790342483",
+              "LD6968/1860",
+              "PS8717/1859",
+              "HKS6280/1858",
+              "AP4384/1856",
+              "VC6763/1854",
+              "DG1480/1853"
+            ]
+          }
+        },
+        "reason": "No coupon in the book can be identified as 'launch coupon': none of the 105 coupons has it in its code or description. Name the coupon code and I will measure it.",
+        "note": "0 of 110 web orders carry any coupon code, so redemption cannot be measured from orders for any coupon."
+      },
+      "payment_stock_mismatch": {
+        "status": "answered",
+        "orders_checked": 110,
+        "sales_orders_read": 79,
+        "sales_orders_unreadable": {},
+        "counts_by_rule": {
+          "stock_held_for_cancelled": 6,
+          "shipped_unpaid": 3,
+          "paid_not_released": 1,
+          "unpaid_holding_stock": 83
+        },
+        "high": [
+          {
+            "rule": "stock_held_for_cancelled",
+            "severity": "high",
+            "order_number": "WEB-2026-00044",
+            "order_status": "cancelled",
+            "order_date": "2026-08-25",
+            "payment_method": "check",
+            "payment_captured": false,
+            "grand_total": 2290373690.4,
+            "sales_order_number": "SO-2026-00132",
+            "sales_order_status": "confirmed",
+            "delivered_status": "undelivered",
+            "fixture": false
+          },
+          {
+            "rule": "shipped_unpaid",
+            "severity": "high",
+            "order_number": "WEB-2026-00074",
+            "order_status": "pending_payment",
+            "order_date": "2026-08-26",
+            "payment_method": "razorpay",
+            "payment_captured": false,
+            "grand_total": 433163181072.07,
+            "sales_order_number": "SO-2026-00058",
+            "sales_order_status": "confirmed",
+            "delivered_status": "delivered",
+            "fixture": false
+          },
+          {
+            "rule": "stock_held_for_cancelled",
+            "severity": "high",
+            "order_number": "WEB-2026-00014",
+            "order_status": "cancelled",
+            "order_date": "2026-08-27",
+            "payment_method": "razorpay",
+            "payment_captured": false,
+            "grand_total": 61427151284.74,
+            "sales_order_number": "SO-2025-00028",
+            "sales_order_status": "confirmed",
+            "delivered_status": "undelivered",
+            "fixture": false
+          },
+          {
+            "rule": "stock_held_for_cancelled",
+            "severity": "high",
+            "order_number": "WEB-2026-00089",
+            "order_status": "cancelled",
+            "order_date": "2026-08-28",
+            "payment_method": "card",
+            "payment_captured": false,
+            "grand_total": 15850459532.71,
+            "sales_order_number": "SO-2026-00088",
+            "sales_order_status": "confirmed",
+            "delivered_status": "undelivered",
+            "fixture": false
+          },
+          {
+            "rule": "shipped_unpaid",
+            "severity": "high",
+            "order_number": "WEB-2026-00100",
+            "order_status": "pending_payment",
+            "order_date": "2026-09-02",
+            "payment_method": "cod",
+            "payment_captured": false,
+            "grand_total": 62169757642.97,
+            "sales_order_number": "SO-2026-00059",
+            "sales_order_status": "confirmed",
+            "delivered_status": "delivered",
+            "fixture": false
+          },
+          {
+            "rule": "stock_held_for_cancelled",
+            "severity": "high",
+            "order_number": "WEB-2026-00022",
+            "order_status": "cancelled",
+            "order_date": "2026-09-05",
+            "payment_method": "cod",
+            "payment_captured": false,
+            "grand_total": 11674001178.92,
+            "sales_order_number": "SO-2026-00124",
+            "sales_order_status": "confirmed",
+            "delivered_status": "undelivered",
+            "fixture": false
+          },
+          {
+            "rule": "shipped_unpaid",
+            "severity": "high",
+            "order_number": "WEB-2026-00087",
+            "order_status": "pending_payment",
+            "order_date": "2026-09-07",
+            "payment_method": "razorpay",
+            "payment_captured": false,
+            "grand_total": 52221090393.65,
+            "sales_order_number": "SO-2026-00226",
+            "sales_order_status": "confirmed",
+            "delivered_status": "delivered",
+            "fixture": false
+          },
+          {
+            "rule": "stock_held_for_cancelled",
+            "severity": "high",
+            "order_number": "WEB-2026-00056",
+            "order_status": "cancelled",
+            "order_date": "2026-09-10",
+            "payment_method": "ach",
+            "payment_captured": false,
+            "grand_total": 25285255279.87,
+            "sales_order_number": "SO-2026-00157",
+            "sales_order_status": "confirmed",
+            "delivered_status": "undelivered",
+            "fixture": false
+          },
+          {
+            "rule": "stock_held_for_cancelled",
+            "severity": "high",
+            "order_number": "WEB-2026-00092",
+            "order_status": "cancelled",
+            "order_date": "2026-09-11",
+            "payment_method": "cod",
+            "payment_captured": false,
+            "grand_total": 237968298233.96,
+            "sales_order_number": "SO-2026-00231",
+            "sales_order_status": "confirmed",
+            "delivered_status": "undelivered",
+            "fixture": false
+          }
+        ],
+        "medium": [
+          {
+            "rule": "paid_not_released",
+            "severity": "medium",
+            "order_number": "WEB-2026-00110",
+            "order_status": "pending_payment",
+            "order_date": "2026-10-10",
+            "payment_method": "razorpay",
+            "payment_captured": true,
+            "grand_total": 4478.72,
+            "sales_order_number": null,
+            "sales_order_status": null,
+            "delivered_status": null,
+            "fixture": true
+          }
+        ],
+        "low_count": 83,
+        "low_sample": [
+          "WEB-2026-00018",
+          "WEB-2026-00046",
+          "WEB-2026-00023",
+          "WEB-2026-00049",
+          "WEB-2026-00016",
+          "WEB-2026-00021",
+          "WEB-2026-00067",
+          "WEB-2026-00058",
+          "WEB-2026-00073",
+          "WEB-2026-00091"
+        ],
+        "stock_levels": {
+          "status": "not_visible_to_this_seat",
+          "reason": "This seat has no stock-level tools (no Bin, StockEntry or Warehouse); endpoint.inventory.shipping_board refuses with 403. Whether the items on these orders are physically in stock must come from the Stock seat.",
+          "probes": [
+            {
+              "entity": "StockEntry",
+              "access": "outside_seat",
+              "detail": "/api/StockEntry?limit=1: HTTP 403 b'{\"detail\":\"App \\'inventory\\' is not enabled for your account\"}'"
+            },
+            {
+              "entity": "StockLedgerEntry",
+              "access": "unknown_entity"
+            },
+            {
+              "entity": "Warehouse",
+              "access": "outside_seat",
+              "detail": "/api/Warehouse?limit=1: HTTP 403 b'{\"detail\":\"App \\'inventory\\' is not enabled for your account\"}'"
+            },
+            {
+              "entity": "Bin",
+              "access": "unknown_entity"
+            }
+          ],
+          "escalation": {
+            "would_file": true,
+            "to": "Stock seat (needs_another_app)",
+            "orders": [
+              "WEB-2026-00014",
+              "WEB-2026-00022",
+              "WEB-2026-00044",
+              "WEB-2026-00056",
+              "WEB-2026-00074",
+              "WEB-2026-00087",
+              "WEB-2026-00089",
+              "WEB-2026-00092",
+              "WEB-2026-00100",
+              "WEB-2026-00110"
+            ]
+          }
+        },
+        "freshness": {
+          "rechecked": 10,
+          "still_holds": 10,
+          "changed_since_snapshot": [],
+          "unreadable": []
+        }
+      }
+    },
+    "refusals": [],
+    "dry_run": true,
+    "snapshot": {
+      "taken_at": "2026-10-10T21:56:30+0530",
+      "orders": 110,
+      "coupons": 105,
+      "sales_orders_read": 79,
+      "sales_order_errors": 0,
+      "pagination_complete": true
+    },
+    "context": {
+      "country": "IN",
+      "base_currency": "INR",
+      "currency_symbol": "₹",
+      "locale_tag": "en-IN",
+      "tax_regime": "gst",
+      "tax_regime_label": "GST (Goods & Services Tax)",
+      "postal_code_label": "PIN Code",
+      "state_label": "State",
+      "date_format": "dd/MM/yyyy",
+      "payment_methods": {
+        "razorpay": "Razorpay",
+        "bank_transfer": "Bank Transfer / NEFT",
+        "cod": "Cash on Delivery"
+      }
+    },
+    "writes": null
+  }
+}

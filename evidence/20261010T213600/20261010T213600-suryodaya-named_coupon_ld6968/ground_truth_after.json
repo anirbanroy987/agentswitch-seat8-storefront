@@ -1,0 +1,8 @@
+{
+  "coupon_named_matches_db": {
+    "exists": true,
+    "used_count": 42.0,
+    "orders": 0,
+    "order_numbers": []
+  }
+}

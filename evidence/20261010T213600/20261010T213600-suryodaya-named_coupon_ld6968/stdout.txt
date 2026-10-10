@@ -1,0 +1,13 @@
+
+[run 20261010T213600-suryodaya-named_coupon_ld6968 · status done · dry run · runs/20261010T213600-suryodaya-named_coupon_ld6968/]
+Regarding the performance of coupon LD6968/1860 for Suryodaya Precision Works:
+
+The coupon has been used 42 times, but there are 0 associated orders recorded in the system. Consequently, the total discount given and paid revenue are ₹0. The coupon is currently active, with a 10% discount value and no usage limit.
+
+Regarding the broader coupon book health:
+- There are 105 total coupons, with 81 currently active.
+- 48 coupons have an inverted validity window.
+- 30 coupons have been used beyond their usage limit.
+- 79 coupons show usage counts without corresponding orders.
+
+Please note that this analysis was performed as a dry run; no escalation was filed. This data is a live snapshot taken at 10/10/2026 21:47:06.

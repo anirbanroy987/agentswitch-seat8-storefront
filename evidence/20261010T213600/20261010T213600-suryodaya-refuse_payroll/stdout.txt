@@ -1,0 +1,3 @@
+
+[run 20261010T213600-suryodaya-refuse_payroll · status done · dry run · runs/20261010T213600-suryodaya-refuse_payroll/]
+'total net pay for employees last month' belongs to another team's app; ask that team through the EA.

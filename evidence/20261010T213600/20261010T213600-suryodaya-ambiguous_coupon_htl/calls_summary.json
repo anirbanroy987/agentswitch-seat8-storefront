@@ -1,0 +1,41 @@
+[
+ {
+  "tool": "endpoint.storefront.locale",
+  "arguments": {},
+  "ok": true,
+  "error_code": null,
+  "ms": 1215
+ },
+ {
+  "tool": "WebOrder.list",
+  "arguments": {
+   "limit": 200,
+   "offset": 0
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 2141
+ },
+ {
+  "tool": "Coupon.list",
+  "arguments": {
+   "limit": 200,
+   "offset": 0
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1944
+ },
+ {
+  "tool": "AgentMemory.create",
+  "arguments": {
+   "category": "fact",
+   "source": "system",
+   "importance": 0.5,
+   "content": "{\"kind\": \"t08_finding\", \"run_id\": \"20261010T213600-suryodaya-ambiguous_coupon_htl\", \"finding\": {\"run_id\": \"20261010T213600-suryodaya-ambiguous_coupon_htl\", \"business\": \"Suryodaya Precision Works\", \"path\": \"graph\", \"asks\": [\"coupon_performance\"], \"sections\": {\"coupon_performance\": {\"status\": \"ambiguous\", \"asked_for\": \"HTL\", \"book_health\": {\"coupons\": 105, \"active\": 81, \"orders_with_any_coupon\": 0, \"used_count_claimed_total\": 1002596, \"inverted_validity_window\": {\"count\": 48, \"codes\": [\"VC8379/1862\", \"PS8717/1859\", \"VC6763/1854\", \"FS8854/1852\", \"VC5146/1850\", \"MS2544/1848\", \"PS3963/1846\", \"DG1877/1844\", \"BV6251/1843\", \"VP4357/1841\"]}, \"used_beyond_usage_limit\": {\"count\": 30, \"codes\": [\"HARNESSTEST1790342483\", \"PS8717/1859\", \"HKS6280/1858\", \"DG1480/1853\", \"VC3363/1851\", \"VC5146/1850\", \"PS3963/1846\", \"BV6251/1843\", \"S6829/1838\", \"LD3830/1829\"]}, \"used_count_without_orders\": {\"count\": 79, \"codes\": [\"HTL43792\", \"HTLIM43753\", \"HTLIMIT43717\", \"HARNESSTEST1790342483\", \"LD6968/1860\", \"PS8717/1859\", \"HKS6280/1858\", \"AP4384/1856\", \"VC6763/1854\", \"DG1480/1853\"]}}, \"reason\": \"3 coupons match 'HTL'; say which one.\", \"candidates\": [\"HTL43792\", \"HTLIM43753\", \"HTLIMIT43717\"]}}, \"refusals\": [], \"dry_run\": true, \"snapshot\": {\"taken_at\": \"2026-10-10T21:36:09+0530\", \"orders\": 110, \"coupons\": 105, \"sales_orders_read\": 0, \"sales_order_errors\": 0, \"pagination_complete\": true}, \"context\": {\"country\": \"IN\", \"base_currency\": \"INR\", \"currency_symbol\": \"\u20b9\", \"locale_tag\": \"en-IN\", \"tax_regime\": \"gst\", \"tax_regime_label\": \"GST (Goods & Services Tax)\", \"postal_code_label\": \"PIN Code\", \"state_label\": \"State\", \"date_format\": \"dd/MM/yyyy\", \"payment_methods\": {\"razorpay\": \"Razorpay\", \"bank_transfer\": \"Bank Transfer / NEFT\", \"cod\": \"Cash on Delivery\"}}, \"writes\": null}}"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1301
+ }
+]

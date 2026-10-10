@@ -1,0 +1,24 @@
+{
+  "id": "mismatches_only",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {},
+  "instances": [
+    "suryodaya",
+    "keystone"
+  ],
+  "prompt": "Find any order where payment and stock disagree.",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "payment_stock_mismatch": "answered"
+    }
+  },
+  "verifiers": [
+    "mismatches_match_db"
+  ],
+  "checks": "Rule-by-rule set equality between the agent's flagged orders and the rules re-derived from raw WebOrder + SalesOrder rows; drift if those rows changed during the run.",
+  "instance": "keystone"
+}

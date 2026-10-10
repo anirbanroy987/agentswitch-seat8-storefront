@@ -1,0 +1,16 @@
+
+[run 20261010T213600-suryodaya-concurrent_edit_before_reread · status done · dry run · runs/20261010T213600-suryodaya-concurrent_edit_before_reread/]
+Regarding your request for a payment and stock mismatch analysis, here are the findings based on a live snapshot taken at 2026-10-10T21:37:39+0530.
+
+**Payment and Stock Mismatch Summary**
+We reviewed 110 orders and identified several discrepancies:
+* **Stock held for cancelled orders:** 6 instances (e.g., WEB-2026-00044, WEB-2026-00014, WEB-2026-00089, WEB-2026-00022, WEB-2026-00056, WEB-2026-00092). These orders are cancelled, but the associated sales orders remain confirmed and undelivered, tying up stock.
+* **Shipped unpaid:** 3 instances (WEB-2026-00074, WEB-2026-00100, WEB-2026-00087). These orders are marked as delivered, but no payment has been recorded.
+* **Paid but not released:** 1 instance (WEB-2026-00110). Payment is captured, but the order remains in pending_payment status.
+* **Unpaid holding stock:** 83 instances where unpaid orders are currently holding stock.
+
+**Stock Visibility**
+I do not have access to stock-level tools (Bin, StockEntry, or Warehouse) to verify physical inventory. Because this is a dry run, an escalation WOULD be filed to the Stock seat for the affected orders (WEB-2026-00014, WEB-2026-00022, WEB-2026-00044, WEB-2026-00056, WEB-2026-00074, WEB-2026-00087, WEB-2026-00089, WEB-2026-00092, WEB-2026-00100, and WEB-2026-00110).
+
+**Data Freshness**
+Please note that order WEB-2026-00110 changed while I was checking the data.

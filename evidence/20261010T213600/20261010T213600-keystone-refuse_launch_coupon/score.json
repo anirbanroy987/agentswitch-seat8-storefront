@@ -1,0 +1,11 @@
+{
+  "task_id": "refuse_launch_coupon",
+  "verdict": "unevaluated",
+  "checks": [
+    {
+      "name": "run executed",
+      "status": "unevaluated",
+      "detail": "no token for Keystone Precision Works LLC: run `uv run python -m seat8 login --biz us`"
+    }
+  ]
+}

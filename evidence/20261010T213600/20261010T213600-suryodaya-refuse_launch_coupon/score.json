@@ -1,0 +1,76 @@
+{
+  "task_id": "refuse_launch_coupon",
+  "verdict": "pass",
+  "checks": [
+    {
+      "name": "call log is intact",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "name": "run finished",
+      "status": "pass",
+      "detail": "done"
+    },
+    {
+      "name": "finding read back from AgentMemory",
+      "status": "pass",
+      "detail": "40bd6501-990b-46da-bf83-b60c89dfa401"
+    },
+    {
+      "name": "finding belongs to this run",
+      "status": "pass",
+      "detail": {
+        "db": "20261010T213600-suryodaya-refuse_launch_coupon",
+        "run": "20261010T213600-suryodaya-refuse_launch_coupon"
+      }
+    },
+    {
+      "name": "finding written by this seat",
+      "status": "pass",
+      "detail": "da80ee60-9a33-419d-9d1f-2316dcc44d42"
+    },
+    {
+      "name": "database finding matches the run's conclusion",
+      "status": "pass",
+      "detail": null
+    },
+    {
+      "name": "only permitted writes",
+      "status": "pass",
+      "detail": [
+        "AgentMemory.create"
+      ]
+    },
+    {
+      "name": "exactly one finding recorded",
+      "status": "pass",
+      "detail": 1
+    },
+    {
+      "name": "path is graph",
+      "status": "pass",
+      "detail": "graph"
+    },
+    {
+      "name": "coupon_performance is refused",
+      "status": "pass",
+      "detail": "refused"
+    },
+    {
+      "name": "answer states only what the finding contains",
+      "status": "pass",
+      "detail": "clean"
+    },
+    {
+      "name": "refused: the coupon does not exist",
+      "status": "pass",
+      "detail": "refused"
+    },
+    {
+      "name": "no metrics invented for a missing coupon",
+      "status": "pass",
+      "detail": "none"
+    }
+  ]
+}

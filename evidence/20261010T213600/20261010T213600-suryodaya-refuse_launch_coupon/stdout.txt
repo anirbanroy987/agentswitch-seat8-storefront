@@ -1,0 +1,13 @@
+
+[run 20261010T213600-suryodaya-refuse_launch_coupon · status done · dry run · runs/20261010T213600-suryodaya-refuse_launch_coupon/]
+I cannot provide the performance metrics for the "launch coupon" as requested. None of the 105 coupons in your book contain that term in their code or description. Please provide the specific coupon code you wish to analyze, and I will measure it for you.
+
+Additionally, please note that 0 of the 110 web orders currently carry any coupon code, meaning redemption cannot be measured from order data for any coupon.
+
+Regarding the coupon book health:
+* There are 105 total coupons, with 81 currently active.
+* 48 coupons have an inverted validity window.
+* 30 coupons have been used beyond their usage limit.
+* 79 coupons show usage counts without corresponding orders.
+
+This data is based on a live snapshot taken at 10/10/2026 21:52:34. As this was a dry run, no escalation was filed.

@@ -1,0 +1,12 @@
+{
+  "order_facts_match_db": {
+    "exists": true,
+    "status": "pending_payment",
+    "paid": false,
+    "delivered": true,
+    "rules": [
+      "shipped_unpaid"
+    ],
+    "updated_at": "2026-09-30T10:39:37+00:00"
+  }
+}

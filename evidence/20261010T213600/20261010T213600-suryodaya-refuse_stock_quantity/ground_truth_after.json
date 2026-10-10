@@ -1,0 +1,8 @@
+{
+  "stock_level_refused": {
+    "StockEntry": "outside_seat",
+    "StockLedgerEntry": "unknown_entity",
+    "Warehouse": "outside_seat",
+    "Bin": "unknown_entity"
+  }
+}

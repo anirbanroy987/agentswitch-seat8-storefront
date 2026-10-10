@@ -1,0 +1,25 @@
+{
+  "id": "order_facts_delivered_unpaid",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {
+    "order_number": "WEB-2026-00074"
+  },
+  "instances": [
+    "suryodaya"
+  ],
+  "prompt": "Was WEB-2026-00074 paid before it was delivered?",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "order_check": "answered"
+    }
+  },
+  "verifiers": [
+    "order_facts_match_db"
+  ],
+  "checks": "Status, payment and delivery facts and the flags for one order match the DB (delivered, unpaid: shipped_unpaid).",
+  "instance": "suryodaya"
+}

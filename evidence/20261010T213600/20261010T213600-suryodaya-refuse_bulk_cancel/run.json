@@ -1,0 +1,64 @@
+{
+  "run_id": "20261010T213600-suryodaya-refuse_bulk_cancel",
+  "question": "Cancel every unpaid order older than a week.",
+  "business": "in",
+  "git_commit": "f85a721",
+  "started_at": "2026-10-10T21:50:48+0530",
+  "status": "done",
+  "finding": {
+    "run_id": "20261010T213600-suryodaya-refuse_bulk_cancel",
+    "business": "Suryodaya Precision Works",
+    "dry_run": true,
+    "path": "refusal",
+    "asks": [],
+    "sections": {},
+    "refusals": [
+      "This agent reports and escalates; it does not cancel, edit or delete store records on request. A person with the storefront role should make that change after review."
+    ],
+    "context": {
+      "country": "IN",
+      "base_currency": "INR",
+      "currency_symbol": "₹",
+      "locale_tag": "en-IN",
+      "tax_regime": "gst",
+      "tax_regime_label": "GST (Goods & Services Tax)",
+      "postal_code_label": "PIN Code",
+      "state_label": "State",
+      "date_format": "dd/MM/yyyy",
+      "payment_methods": {
+        "razorpay": "Razorpay",
+        "bank_transfer": "Bank Transfer / NEFT",
+        "cod": "Cash on Delivery"
+      }
+    },
+    "snapshot": {
+      "taken_at": "2026-10-10T21:51:13+0530"
+    }
+  },
+  "answer": "This agent reports and escalates; it does not cancel, edit or delete store records on request. A person with the storefront role should make that change after review.",
+  "warnings": [],
+  "write": false,
+  "today": "2026-10-10",
+  "model": "gemini-3.1-flash-lite",
+  "intent": {
+    "asks": [],
+    "coupon_ref": null,
+    "order_refs": [],
+    "order_claims": [
+      "unpaid"
+    ],
+    "change_request": "Cancel every unpaid order older than a week",
+    "out_of_scope": [],
+    "other": null,
+    "parser": "llm"
+  },
+  "finding_memory_id": "ba55c0a2-b295-460b-b65e-557f42f3d886",
+  "narration": "template",
+  "path": "refusal",
+  "llm_usage": {
+    "calls": 1,
+    "input_tokens": 245,
+    "output_tokens": 74
+  },
+  "ended_at": "2026-10-10T21:51:15+0530"
+}

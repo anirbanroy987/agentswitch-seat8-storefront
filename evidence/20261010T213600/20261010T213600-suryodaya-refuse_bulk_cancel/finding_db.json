@@ -1,0 +1,37 @@
+{
+  "memory_id": "ba55c0a2-b295-460b-b65e-557f42f3d886",
+  "created_by": "da80ee60-9a33-419d-9d1f-2316dcc44d42",
+  "created_at": "2026-10-10T16:21:14.458766",
+  "run_id": "20261010T213600-suryodaya-refuse_bulk_cancel",
+  "finding": {
+    "run_id": "20261010T213600-suryodaya-refuse_bulk_cancel",
+    "business": "Suryodaya Precision Works",
+    "path": "refusal",
+    "asks": [],
+    "sections": {},
+    "refusals": [
+      "This agent reports and escalates; it does not cancel, edit or delete store records on request. A person with the storefront role should make that change after review."
+    ],
+    "dry_run": true,
+    "snapshot": {
+      "taken_at": "2026-10-10T21:51:13+0530"
+    },
+    "context": {
+      "country": "IN",
+      "base_currency": "INR",
+      "currency_symbol": "₹",
+      "locale_tag": "en-IN",
+      "tax_regime": "gst",
+      "tax_regime_label": "GST (Goods & Services Tax)",
+      "postal_code_label": "PIN Code",
+      "state_label": "State",
+      "date_format": "dd/MM/yyyy",
+      "payment_methods": {
+        "razorpay": "Razorpay",
+        "bank_transfer": "Bank Transfer / NEFT",
+        "cod": "Cash on Delivery"
+      }
+    },
+    "writes": null
+  }
+}

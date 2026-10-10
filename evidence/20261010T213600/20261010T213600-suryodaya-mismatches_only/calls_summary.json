@@ -1,0 +1,913 @@
+[
+ {
+  "tool": "endpoint.storefront.locale",
+  "arguments": {},
+  "ok": true,
+  "error_code": null,
+  "ms": 1220
+ },
+ {
+  "tool": "WebOrder.list",
+  "arguments": {
+   "limit": 200,
+   "offset": 0
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 2321
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "0539e5af-eb2d-470d-bf1b-f586f457b0c5"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 2837
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "02f9942b-11fd-4d2a-8eb3-349f5928548b"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 4414
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "004f7fd9-9bff-4deb-9f97-fdbcec04b5ca"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 5067
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "09eff04d-d096-4fe6-9fdb-4347d64e66e2"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6651
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "07d638fe-7ee0-4893-a316-b2a8a21d9acc"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6676
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "0653127b-61e7-46d6-9e6b-5bb7ac5f88b9"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6684
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "0c24214e-57b6-4649-ab11-37990b030276"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6676
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "0aec6dd0-2f0e-418d-b055-734be398d848"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 7344
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "0e9de034-a20e-4db7-94b5-dff58c52cf4c"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6148
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "0f95b556-c1ef-4e33-8303-89e1ed9077bb"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 4571
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "11ef8143-192a-4a73-8b75-811006d8577a"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 7096
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "19dcffb5-89c3-44bf-b924-2e31be48fdbc"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6147
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "1f008e99-18b6-4790-8d65-eee9a3e4117b"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6131
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "1a31e7dc-a704-4573-b4f8-d6d71a1aae4f"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6140
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "16f80bb6-8aaa-40b1-ac10-0b42bf2d8778"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6168
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "2262d6bb-e98d-4bdb-8af3-e4499b535cfc"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 5473
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "344aace9-7605-4674-a536-ca418d55117f"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6047
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "375c14db-8ecf-4042-b669-76863843fbf4"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 2872
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "3728a155-a538-45f2-a036-eaa91970e14e"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6047
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "41f8c326-cdd6-4ed5-a637-e1f9527d82c1"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6124
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "43e32640-0d0a-4f48-8ff6-e5b56705f669"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6124
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "4630c2ba-f387-44da-a7f1-6b9755fbc019"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6115
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "3fcf2d35-4d3e-412b-8299-883194804fcf"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6141
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "3bcb24c5-8678-4fa9-8512-b31f623d0d97"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6141
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "463d0603-c74a-4b6d-ab21-11c0665cbe61"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6202
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "4fb706dc-e0d4-4288-a5d1-df07d158ac2b"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6202
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "4ff17ff0-ff00-4f7b-af47-f477c374e387"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6214
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "55ca8d34-b600-4dd3-ba57-ef43b2e794f2"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6362
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "50b1409e-575c-4802-be98-fa5e2e2cda2a"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6362
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "61881689-1a8b-4eb0-9bbc-1bcb2f175cdf"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6345
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "5814790c-21db-45e0-bc67-ef72c0c24878"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6352
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "635dc790-500d-40f5-99af-fa125d7c8c99"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6352
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "660108ba-482b-40ed-bf42-0d15117622fa"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6312
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "66a64f12-a2b6-4387-b7cb-5423884387e4"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6317
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "65c058a5-5825-4226-aa72-0d92bbefec0a"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6329
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "66b86360-5b8e-46cf-b527-b1f9b0001da4"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6084
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6c2fb4d4-9e5d-490f-a383-f34a0aea7071"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6070
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6b42ea2a-f993-42c9-8d32-cab59f9222b6"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6077
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6a2084c9-d954-43bb-a096-48ca193ae6df"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6077
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "67f1c088-830e-4f31-a6f2-1f2bc328acf8"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6080
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6ecb2cf5-f4e9-44ba-8f83-f618640ae43c"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6096
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6e97526f-11eb-4e4f-9cb1-b1dc31e1a5d7"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6107
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6f5dec58-ea7c-46f3-a783-2314c0bd3585"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6095
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "7c1d76db-8482-4944-8f3a-1954c5e70848"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6213
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "753450d8-9c7b-4a4f-a1d5-b0fadd97e3d0"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6215
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "722c5852-7d18-4d3b-978f-883c10ef641a"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6231
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "814524b8-be6b-4839-b6b1-ff3057608465"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6225
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "793d2070-dc0b-4cdc-ab51-1e7e016a0ac2"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6228
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "8af6d652-a8a7-454f-b846-77dd073f18b2"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6296
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "9caaa477-3d5c-4d6e-ab08-1068bad4ecf9"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6296
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "98fb0743-fd18-4965-ae6a-1f49e31e2929"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6308
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "9f3dca49-02eb-45b9-9f8c-4d30c92cbf4c"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6279
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "a003d3d9-87a5-4df6-a81f-fd8abffd8367"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6273
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "aa1c6d2d-daf4-48ae-9f92-e1e031888e2e"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6276
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "9dc62035-a1d7-4dc5-8699-96bb6c2ad736"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6292
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "a4e9c539-18b9-48bf-867f-b7b8e84ab302"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6276
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "b918b578-54aa-4530-af53-cf991f1999af"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6205
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "b3137dbc-fab0-4898-b7d1-70188d8916a2"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6217
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "b4e8fbc7-20ec-4354-92af-bde3d896ce7c"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6217
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "d1255fa8-9164-4066-8e3e-439c14311992"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6107
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "c1e0ab21-9d93-4566-8149-bb5cf4a56eb8"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6120
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "cf635612-250d-4836-977a-6b8991522b34"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6114
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "be91c57a-22b2-4a78-9e26-4943a8c2d0cd"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6133
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "c57e5d9b-1f6e-407c-a46a-c897394a7c10"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6119
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "db653535-a749-4d12-8905-c6b594f80878"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6393
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "da2e6f8f-b952-4a37-b281-58cf27359e27"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6394
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "d91696cf-cf29-4b7a-b4c4-b404736f67c3"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6394
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "eb187cc6-4e91-4fa5-b7bf-465479832158"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6158
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "e5156840-cbec-40a2-94f3-eea5ae4bfadf"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6160
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "e56a512b-3e11-4b87-a889-775381408498"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6167
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "ebe5018e-d052-4fbf-a4b6-9c445eb0a4dd"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6168
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "ebdf58d1-e1f6-4802-8e9f-0d5e8d75bac5"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6168
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "f827da52-6d83-4945-89dd-4a6710e53feb"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6181
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "fb65328d-8a11-4766-85e9-dcd57fbe015e"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6198
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "f29693b3-692e-415b-a0ad-d7ffd760f7ec"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 6198
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "fd934458-7461-43ec-a12b-e570d7b829fd"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 5524
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "fb8b71c5-bfa1-432b-8347-bcf532a2aec4"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 5548
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "fe2087f2-f47c-423e-b985-5b7cfbb67e2c"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 5538
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "fef87dac-a29d-4cf0-bb30-c82ba3c9d133"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 5531
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "5ba24b76-9f6a-4079-9e82-bb9106bb8c8f"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1485
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "0c24214e-57b6-4649-ab11-37990b030276"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1215
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "a7a7b742-8626-4421-ae26-f28a69cbd881"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1220
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "db653535-a749-4d12-8905-c6b594f80878"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1491
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "71be3df7-bffa-449c-b721-733479af3e6a"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1221
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6c2fb4d4-9e5d-490f-a383-f34a0aea7071"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1466
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "37cd1c7f-70ef-4e08-a477-33e6dfd17d4e"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1216
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "5814790c-21db-45e0-bc67-ef72c0c24878"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1468
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "a79e1880-caa6-47f6-9170-58da0e6c9456"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1218
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "4ff17ff0-ff00-4f7b-af47-f477c374e387"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1248
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "4771a21a-0e9f-4b70-ae7a-536b743cf778"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1524
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "635dc790-500d-40f5-99af-fa125d7c8c99"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1324
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "2e82f564-f37f-4b5f-8fb6-e5f580223fc9"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1200
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "6ecb2cf5-f4e9-44ba-8f83-f618640ae43c"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1499
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "34dc8766-b538-412c-8a92-e2413b189a36"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1183
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "67f1c088-830e-4f31-a6f2-1f2bc328acf8"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1482
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "19c12caa-644b-4574-a8fe-9141078b96a2"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1241
+ },
+ {
+  "tool": "SalesOrder.get",
+  "arguments": {
+   "id": "66a64f12-a2b6-4387-b7cb-5423884387e4"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1522
+ },
+ {
+  "tool": "WebOrder.get",
+  "arguments": {
+   "id": "5f14edff-201a-4a4a-90a2-ede37f787258"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1201
+ },
+ {
+  "tool": "AgentMemory.create",
+  "arguments": {
+   "category": "fact",
+   "source": "system",
+   "importance": 0.5,
+   "content": "{\"kind\": \"t08_finding\", \"run_id\": \"20261010T213600-suryodaya-mismatches_only\", \"finding\": {\"run_id\": \"20261010T213600-suryodaya-mismatches_only\", \"business\": \"Suryodaya Precision Works\", \"path\": \"graph\", \"asks\": [\"payment_stock_mismatch\"], \"sections\": {\"payment_stock_mismatch\": {\"status\": \"answered\", \"orders_checked\": 110, \"sales_orders_read\": 79, \"sales_orders_unreadable\": {}, \"counts_by_rule\": {\"stock_held_for_cancelled\": 6, \"shipped_unpaid\": 3, \"paid_not_released\": 1, \"unpaid_holding_stock\": 83}, \"high\": [{\"rule\": \"stock_held_for_cancelled\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00044\", \"order_status\": \"cancelled\", \"order_date\": \"2026-08-25\", \"payment_method\": \"check\", \"payment_captured\": false, \"grand_total\": 2290373690.4, \"sales_order_number\": \"SO-2026-00132\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"undelivered\", \"fixture\": false}, {\"rule\": \"shipped_unpaid\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00074\", \"order_status\": \"pending_payment\", \"order_date\": \"2026-08-26\", \"payment_method\": \"razorpay\", \"payment_captured\": false, \"grand_total\": 433163181072.07, \"sales_order_number\": \"SO-2026-00058\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"delivered\", \"fixture\": false}, {\"rule\": \"stock_held_for_cancelled\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00014\", \"order_status\": \"cancelled\", \"order_date\": \"2026-08-27\", \"payment_method\": \"razorpay\", \"payment_captured\": false, \"grand_total\": 61427151284.74, \"sales_order_number\": \"SO-2025-00028\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"undelivered\", \"fixture\": false}, {\"rule\": \"stock_held_for_cancelled\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00089\", \"order_status\": \"cancelled\", \"order_date\": \"2026-08-28\", \"payment_method\": \"card\", \"payment_captured\": false, \"grand_total\": 15850459532.71, \"sales_order_number\": \"SO-2026-00088\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"undelivered\", \"fixture\": false}, {\"rule\": \"shipped_unpaid\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00100\", \"order_status\": \"pending_payment\", \"order_date\": \"2026-09-02\", \"payment_method\": \"cod\", \"payment_captured\": false, \"grand_total\": 62169757642.97, \"sales_order_number\": \"SO-2026-00059\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"delivered\", \"fixture\": false}, {\"rule\": \"stock_held_for_cancelled\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00022\", \"order_status\": \"cancelled\", \"order_date\": \"2026-09-05\", \"payment_method\": \"cod\", \"payment_captured\": false, \"grand_total\": 11674001178.92, \"sales_order_number\": \"SO-2026-00124\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"undelivered\", \"fixture\": false}, {\"rule\": \"shipped_unpaid\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00087\", \"order_status\": \"pending_payment\", \"order_date\": \"2026-09-07\", \"payment_method\": \"razorpay\", \"payment_captured\": false, \"grand_total\": 52221090393.65, \"sales_order_number\": \"SO-2026-00226\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"delivered\", \"fixture\": false}, {\"rule\": \"stock_held_for_cancelled\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00056\", \"order_status\": \"cancelled\", \"order_date\": \"2026-09-10\", \"payment_method\": \"ach\", \"payment_captured\": false, \"grand_total\": 25285255279.87, \"sales_order_number\": \"SO-2026-00157\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"undelivered\", \"fixture\": false}, {\"rule\": \"stock_held_for_cancelled\", \"severity\": \"high\", \"order_number\": \"WEB-2026-00092\", \"order_status\": \"cancelled\", \"order_date\": \"2026-09-11\", \"payment_method\": \"cod\", \"payment_captured\": false, \"grand_total\": 237968298233.96, \"sales_order_number\": \"SO-2026-00231\", \"sales_order_status\": \"confirmed\", \"delivered_status\": \"undelivered\", \"fixture\": false}], \"medium\": [{\"rule\": \"paid_not_released\", \"severity\": \"medium\", \"order_number\": \"WEB-2026-00110\", \"order_status\": \"pending_payment\", \"order_date\": \"2026-10-10\", \"payment_method\": \"razorpay\", \"payment_captured\": true, \"grand_total\": 4478.72, \"sales_order_number\": null, \"sales_order_status\": null, \"delivered_status\": null, \"fixture\": true}], \"low_count\": 83, \"low_sample\": [\"WEB-2026-00018\", \"WEB-2026-00046\", \"WEB-2026-00023\", \"WEB-2026-00049\", \"WEB-2026-00016\", \"WEB-2026-00021\", \"WEB-2026-00067\", \"WEB-2026-00058\", \"WEB-2026-00073\", \"WEB-2026-00091\"], \"stock_levels\": {\"status\": \"not_visible_to_this_seat\", \"reason\": \"This seat has no stock-level tools (no Bin, StockEntry or Warehouse); endpoint.inventory.shipping_board refuses with 403. Whether the items on these orders are physically in stock must come from the Stock seat.\", \"probes\": [{\"entity\": \"StockEntry\", \"access\": \"outside_seat\", \"detail\": \"/api/StockEntry?limit=1: HTTP 403 b'{\\\"detail\\\":\\\"App \\\\'inventory\\\\' is not enabled for your account\\\"}'\"}, {\"entity\": \"StockLedgerEntry\", \"access\": \"unknown_entity\"}, {\"entity\": \"Warehouse\", \"access\": \"outside_seat\", \"detail\": \"/api/Warehouse?limit=1: HTTP 403 b'{\\\"detail\\\":\\\"App \\\\'inventory\\\\' is not enabled for your account\\\"}'\"}, {\"entity\": \"Bin\", \"access\": \"unknown_entity\"}], \"escalation\": {\"would_file\": true, \"to\": \"Stock seat (needs_another_app)\", \"orders\": [\"WEB-2026-00014\", \"WEB-2026-00022\", \"WEB-2026-00044\", \"WEB-2026-00056\", \"WEB-2026-00074\", \"WEB-2026-00087\", \"WEB-2026-00089\", \"WEB-2026-00092\", \"WEB-2026-00100\", \"WEB-2026-00110\"]}}, \"freshness\": {\"rechecked\": 10, \"still_holds\": 10, \"changed_since_snapshot\": [], \"unreadable\": []}}}, \"refusals\": [], \"dry_run\": true, \"snapshot\": {\"taken_at\": \"2026-10-10T21:43:25+0530\", \"orders\": 110, \"coupons\": 0, \"sales_orders_read\": 79, \"sales_order_errors\": 0, \"pagination_complete\": true}, \"context\": {\"country\": \"IN\", \"base_currency\": \"INR\", \"currency_symbol\": \"\u20b9\", \"locale_tag\": \"en-IN\", \"tax_regime\": \"gst\", \"tax_regime_label\": \"GST (Goods & Services Tax)\", \"postal_code_label\": \"PIN Code\", \"state_label\": \"State\", \"date_format\": \"dd/MM/yyyy\", \"payment_methods\": {\"razorpay\": \"Razorpay\", \"bank_transfer\": \"Bank Transfer / NEFT\", \"cod\": \"Cash on Delivery\"}}, \"writes\": null}}"
+  },
+  "ok": true,
+  "error_code": null,
+  "ms": 1216
+ }
+]

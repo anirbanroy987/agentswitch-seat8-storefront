@@ -1,0 +1,25 @@
+{
+  "id": "ambiguous_coupon_htl",
+  "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
+  "mode": "dry_run",
+  "fixture": null,
+  "interference": null,
+  "params": {
+    "term": "htl"
+  },
+  "instances": [
+    "suryodaya"
+  ],
+  "prompt": "How did the HTL coupon do?",
+  "expect": {
+    "path": "graph",
+    "sections": {
+      "coupon_performance": "ambiguous"
+    }
+  },
+  "verifiers": [
+    "coupon_ambiguous"
+  ],
+  "checks": "Several coupons match 'HTL': the agent must ask which one, listing only real matching codes.",
+  "instance": "suryodaya"
+}

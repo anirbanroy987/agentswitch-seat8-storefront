@@ -1,0 +1,10 @@
+{
+  "order_premise_corrected": {
+    "exists": true,
+    "status": "confirmed",
+    "paid": true,
+    "delivered": false,
+    "rules": [],
+    "updated_at": "2026-10-08T11:46:21.940697"
+  }
+}

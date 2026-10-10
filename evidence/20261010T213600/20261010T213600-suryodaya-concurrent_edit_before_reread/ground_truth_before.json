@@ -1,0 +1,1236 @@
+{
+  "fixture_change_detected": {
+    "orders": {
+      "WEB-2026-00110": {
+        "rules": [
+          "paid_not_released"
+        ],
+        "status": "pending_payment",
+        "paid": true,
+        "delivered": false,
+        "updated_at": "2026-10-10T15:43:19.967079",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": "SIM-T08-FIXTURE",
+        "notes": "Team 08 harness fixture. Reset by the harness before each run; please do not edit."
+      },
+      "WEB-2026-00109": {
+        "rules": [],
+        "status": "confirmed",
+        "paid": true,
+        "delivered": false,
+        "updated_at": "2026-10-08T11:46:21.940697",
+        "so_updated_at": "2026-10-08T11:43:17.569757",
+        "updated_by": "da80ee60-9a33-419d-9d1f-2316dcc44d42",
+        "payment_gateway_payment_id": "SIM-WEB-2026-00109",
+        "notes": "[TEST a08 bug-hunt] simulated/test order WEB-2026-00109 - safe to ignore; could not cancel (sim advance, no refund path integrated)."
+      },
+      "WEB-2026-00108": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-10-08T11:42:21.636817",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00107": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-10-08T11:42:20.320006",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00106": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-10-08T11:42:18.711195",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00105": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-25T13:28:53.160226",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00104": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-25T13:28:51.955967",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00103": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-25T13:27:46.549866",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00102": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-25T13:27:42.751246",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00101": {
+        "rules": [],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-25T13:26:32.988319",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00100": {
+        "rules": [
+          "shipped_unpaid"
+        ],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": true,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Spring steel strip: line 275 at Ludhiana. Reworked and re-checked."
+      },
+      "WEB-2026-00099": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: order 149 at Ahmednagad. Accepted on concession."
+      },
+      "WEB-2026-00098": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Pipe Wrench: batch 583 at Latur. Released to despatch."
+      },
+      "WEB-2026-00097": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Grade 8.8 fastener: lot 718 at Pune. Reworked and re-checked."
+      },
+      "WEB-2026-00096": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "C-Clamp: line 479 at Ludhiana. Accepted on concession."
+      },
+      "WEB-2026-00095": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00094": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: order 343 at Rajkot. Held pending inspection."
+      },
+      "WEB-2026-00093": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Nitrile O-ring: lot 611 at Nashik. Within tolerance."
+      },
+      "WEB-2026-00092": {
+        "rules": [
+          "stock_held_for_cancelled"
+        ],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Angle Plate: line 705 at Latur. Accepted on concession."
+      },
+      "WEB-2026-00091": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: lot 953 at Kolhapur. Released to despatch."
+      },
+      "WEB-2026-00090": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: line 902 at Solapur. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00089": {
+        "rules": [
+          "stock_held_for_cancelled"
+        ],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Surface Plate: order 996 at Ludhiana. Within tolerance."
+      },
+      "WEB-2026-00088": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00087": {
+        "rules": [
+          "shipped_unpaid"
+        ],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": true,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Spring steel strip: batch 686 at Solapur. Accepted on concession."
+      },
+      "WEB-2026-00086": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00085": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Tap Wrench: batch 817 at Thane. Held pending inspection."
+      },
+      "WEB-2026-00084": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Surface Plate: order 113 at Kolhapur. Reworked and re-checked."
+      },
+      "WEB-2026-00083": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Grade 8.8 fastener: lot 808 at Jalgaon. Within tolerance."
+      },
+      "WEB-2026-00082": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "EN8 round bar: line 296 at Ludhiana. Accepted on concession."
+      },
+      "WEB-2026-00081": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Hex Key Set: lot 950 at Sangli. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00080": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Pipe Wrench: batch 219 at Jalgaon. Reworked and re-checked."
+      },
+      "WEB-2026-00079": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Aluminium extrusion: order 407 at Nagpur. Accepted on concession."
+      },
+      "WEB-2026-00078": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Hardened dowel pin: lot 349 at Ahmednagad. Within tolerance."
+      },
+      "WEB-2026-00077": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Hardened dowel pin: lot 609 at Jalgaon. Reworked and re-checked."
+      },
+      "WEB-2026-00076": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Aluminium extrusion: order 509 at Ludhiana. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00075": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Vernier Caliper: lot 502 at Pune. Within tolerance."
+      },
+      "WEB-2026-00074": {
+        "rules": [
+          "shipped_unpaid"
+        ],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": true,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Pipe Wrench: line 806 at Rajkot. Accepted on concession."
+      },
+      "WEB-2026-00073": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00072": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Pipe Wrench: line 785 at Ludhiana. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00071": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Grade 8.8 fastener: batch 899 at Rajkot. Within tolerance."
+      },
+      "WEB-2026-00070": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Depth Gauge: lot 119 at Nagpur. Held pending inspection."
+      },
+      "WEB-2026-00069": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Machinist Square: line 177 at Sangli. Held pending inspection."
+      },
+      "WEB-2026-00068": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Scriber: lot 399 at Latur. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00067": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Toolmaker's Vice: order 689 at Solapur. Released to despatch."
+      },
+      "WEB-2026-00066": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: order 144 at Aurangabad. Within tolerance."
+      },
+      "WEB-2026-00065": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SG iron casting: order 374 at Coimbatore. Held pending inspection."
+      },
+      "WEB-2026-00064": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Tap Wrench: order 736 at Ludhiana. Reworked and re-checked."
+      },
+      "WEB-2026-00063": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Cast iron billet: order 516 at Pune. Held pending inspection."
+      },
+      "WEB-2026-00062": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Tap Wrench: batch 184 at Latur. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00061": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Mild steel plate: line 730 at Pune. Released to despatch."
+      },
+      "WEB-2026-00060": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00059": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00058": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Hex Key Set: lot 266 at Thane. Released to despatch."
+      },
+      "WEB-2026-00057": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Surface Plate: order 337 at Aurangabad. Held pending inspection."
+      },
+      "WEB-2026-00056": {
+        "rules": [
+          "stock_held_for_cancelled"
+        ],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Drill Chuck: line 528 at Satara. Reworked and re-checked."
+      },
+      "WEB-2026-00055": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "File Set: lot 583 at Kolhapur. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00054": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00053": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Grade 8.8 fastener: batch 669 at Kolhapur. Accepted on concession."
+      },
+      "WEB-2026-00052": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00051": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: batch 107 at Rajkot. Reworked and re-checked."
+      },
+      "WEB-2026-00050": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: line 578 at Nagpur. Released to despatch."
+      },
+      "WEB-2026-00049": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Toolmaker's Vice: lot 116 at Latur. Reworked and re-checked."
+      },
+      "WEB-2026-00048": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00047": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "C-Clamp: order 168 at Nagpur. Released to despatch."
+      },
+      "WEB-2026-00046": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Drill Chuck: order 508 at Thane. Accepted on concession."
+      },
+      "WEB-2026-00045": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Hex Key Set: line 468 at Ludhiana. Accepted on concession."
+      },
+      "WEB-2026-00044": {
+        "rules": [
+          "stock_held_for_cancelled"
+        ],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "V-Block Pair: line 845 at Rajkot. Held pending inspection."
+      },
+      "WEB-2026-00043": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Hex Key Set: lot 756 at Jalgaon. Released to despatch."
+      },
+      "WEB-2026-00042": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Vernier Caliper: lot 923 at Satara. Held pending inspection."
+      },
+      "WEB-2026-00041": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Bench Vice: order 953 at Jalgaon. Accepted on concession."
+      },
+      "WEB-2026-00040": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Grade 8.8 fastener: line 333 at Latur. Released to despatch."
+      },
+      "WEB-2026-00039": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "EN8 round bar: lot 291 at Ludhiana. Within tolerance."
+      },
+      "WEB-2026-00038": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Spring steel strip: lot 796 at Aurangabad. Released to despatch."
+      },
+      "WEB-2026-00037": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Bench Vice: order 587 at Latur. Held pending inspection."
+      },
+      "WEB-2026-00036": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Toolmaker's Vice: line 276 at Thane. Accepted on concession."
+      },
+      "WEB-2026-00035": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Spring steel strip: batch 483 at Kolhapur. Accepted on concession."
+      },
+      "WEB-2026-00034": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Aluminium extrusion: order 627 at Aurangabad. Released to despatch."
+      },
+      "WEB-2026-00033": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Spring steel strip: lot 366 at Coimbatore. Released to despatch."
+      },
+      "WEB-2026-00032": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Spring steel strip: lot 812 at Kolhapur. Within tolerance."
+      },
+      "WEB-2026-00031": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Pipe Wrench: order 306 at Solapur. Cleared by the shift supervisor."
+      },
+      "WEB-2026-00030": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00029": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Aluminium extrusion: lot 493 at Solapur. Within tolerance."
+      },
+      "WEB-2026-00028": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "EN8 round bar: line 202 at Ludhiana. Reworked and re-checked."
+      },
+      "WEB-2026-00027": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00026": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Drill Chuck: order 533 at Thane. Within tolerance."
+      },
+      "WEB-2026-00025": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Feeler Gauge Set: line 887 at Ahmednagad. Within tolerance."
+      },
+      "WEB-2026-00024": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Brass rod: line 534 at Aurangabad. Reworked and re-checked."
+      },
+      "WEB-2026-00023": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Grade 8.8 fastener: order 775 at Sangli. Accepted on concession."
+      },
+      "WEB-2026-00022": {
+        "rules": [
+          "stock_held_for_cancelled"
+        ],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Vernier Caliper: lot 911 at Pune. Accepted on concession."
+      },
+      "WEB-2026-00021": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "C-Clamp: line 322 at Solapur. Held pending inspection."
+      },
+      "WEB-2026-00020": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Tap Wrench: lot 597 at Solapur. Reworked and re-checked."
+      },
+      "WEB-2026-00019": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "C-Clamp: order 843 at Ahmednagad. Within tolerance."
+      },
+      "WEB-2026-00018": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "EN8 round bar: order 142 at Rajkot. Released to despatch."
+      },
+      "WEB-2026-00017": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Nitrile O-ring: lot 267 at Latur. Reworked and re-checked."
+      },
+      "WEB-2026-00016": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Depth Gauge: order 283 at Sangli. Within tolerance."
+      },
+      "WEB-2026-00015": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Toolmaker's Vice: lot 200 at Nagpur. Released to despatch."
+      },
+      "WEB-2026-00014": {
+        "rules": [
+          "stock_held_for_cancelled"
+        ],
+        "status": "cancelled",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Scriber: order 951 at Nagpur. Released to despatch."
+      },
+      "WEB-2026-00013": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Angle Plate: order 642 at Satara. Released to despatch."
+      },
+      "WEB-2026-00012": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Cast iron billet: batch 695 at Nashik. Held pending inspection."
+      },
+      "WEB-2026-00011": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Punch Set: batch 466 at Kolhapur. Released to despatch."
+      },
+      "WEB-2026-00010": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": ""
+      },
+      "WEB-2026-00009": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": "2026-09-30T10:39:37+00:00",
+        "updated_by": "system:n64-credential-mitigation",
+        "payment_gateway_payment_id": null,
+        "notes": "Grade 8.8 fastener: line 882 at Nagpur. Held pending inspection."
+      },
+      "WEB-2026-00001": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SuryaTools storefront order."
+      },
+      "WEB-2026-00002": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SuryaTools storefront order."
+      },
+      "WEB-2026-00003": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SuryaTools storefront order."
+      },
+      "WEB-2026-00004": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SuryaTools storefront order."
+      },
+      "WEB-2026-00005": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "Workshop fit-out order — over the Rs 50,000 e-way bill threshold."
+      },
+      "WEB-2026-00006": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SuryaTools storefront order."
+      },
+      "WEB-2026-00007": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SuryaTools storefront order."
+      },
+      "WEB-2026-00008": {
+        "rules": [],
+        "status": "pending_payment",
+        "paid": false,
+        "delivered": false,
+        "updated_at": "2026-09-30T10:39:37+00:00",
+        "so_updated_at": null,
+        "updated_by": null,
+        "payment_gateway_payment_id": null,
+        "notes": "SuryaTools storefront order."
+      }
+    }
+  }
+}
