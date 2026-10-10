@@ -139,6 +139,14 @@ premise holds on both. Format and verifier API: [`harness/tasks/README.md`](harn
 **Authorship.** The task set, its verifiers and the `_sample` files were written with Claude
 (AI-assisted) and are declared as such. They are the harness, not the graded hand-written tests.
 
+## Status (2026-10-10)
+
+| | Suryodaya (India) | Keystone (US) |
+|---|---|---|
+| Agent | runs live | code path in place (`--biz us`); store context comes from `/api/storefront/locale`, nothing country-specific is hard-coded |
+| Harness, batch `20261010T213600` on `f85a721` | **12/12 tasks pass**, 0 fail, 0 drift ([evidence](evidence/20261010T213600/report.md)) | **not yet verified**: 7 tasks wired, all `unevaluated` (no Keystone login yet) |
+| Write-mode task | `unevaluated`: needs `harness.runner --write` (files one real escalation, withdrawn after scoring) | — |
+
 ## Tests
 
 Hand-written tests live in `tests/` ([`tests/README.md`](tests/README.md)). The `test_sample_*.py` files
