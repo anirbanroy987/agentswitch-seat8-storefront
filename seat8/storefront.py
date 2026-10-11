@@ -92,7 +92,13 @@ def take_snapshot(client: MCPClient, need_orders=True, need_coupons=True,
     snap = Snapshot(taken_at, orders, coupons, complete=ok1 and ok2)
     if need_sales_orders:
         ids = sorted({o["sales_order_id"] for o in orders if o.get("sales_order_id")})
-        snap.sales_orders, snap.sales_order_errors = _get_many(client, "SalesOrder.get", ids)
+        # two paged list calls instead of one get per order; any linked id the list
+        # did not return (filtered, or created mid-read) is fetched individually
+        listed, _ = read_all(client, "SalesOrder.list")
+        by_id = {r["id"]: r for r in listed if r.get("id") in set(ids)}
+        missing = [i for i in ids if i not in by_id]
+        extra, snap.sales_order_errors = _get_many(client, "SalesOrder.get", missing) if missing else ({}, {})
+        snap.sales_orders = {**by_id, **extra}
     return snap
 
 

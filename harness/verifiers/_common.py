@@ -102,7 +102,9 @@ def truth_rules(o: dict, so: dict | None) -> set[str]:
 
 def observe_orders(client) -> dict:
     orders = all_rows(client, "WebOrder.list")
-    sos = get_many(client, "SalesOrder.get", [o["sales_order_id"] for o in orders if o.get("sales_order_id")])
+    linked = {o["sales_order_id"] for o in orders if o.get("sales_order_id")}
+    sos = {r["id"]: r for r in all_rows(client, "SalesOrder.list") if r.get("id") in linked}
+    sos.update(get_many(client, "SalesOrder.get", linked - set(sos)))
     pairs = {}
     for o in orders:
         so = sos.get(o.get("sales_order_id") or "")
