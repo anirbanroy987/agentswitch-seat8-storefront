@@ -31,8 +31,8 @@ from pathlib import Path
 
 from . import storefront as sf
 from .config import business
-from .finding import FindingRecorder, FindingRejected
-from .llm import Gemini, LLMUnavailable, ToolLoop
+from .finding import FindingRecorder, FindingRejected, compact
+from .llm import Gemini, LLMUnavailable, ToolLoop, make_llm
 from .mcp import MCPClient, MCPError
 from .runrec import RunRecord
 from .seat import stock_visibility, store_context
@@ -106,6 +106,10 @@ def parse_request(question: str, llm: Gemini | None) -> dict:
         except LLMUnavailable:
             parsed = None
     parsed = parsed or keyword_parse(question)
+    for k, default in (("asks", []), ("coupon_ref", None), ("order_refs", []), ("order_claims", []),
+                       ("change_request", None), ("out_of_scope", []), ("other", None)):
+        if parsed.get(k) is None or (isinstance(default, list) and not isinstance(parsed.get(k), list)):
+            parsed[k] = default
     parsed["asks"] = [a for a in parsed.get("asks") or [] if a in ASKS]
     # order numbers are matched by pattern too: the model must not drop or invent one
     refs = sorted({m.upper() for m in _ORDER_NO.findall(question)})
@@ -129,13 +133,14 @@ def keyword_parse(question: str) -> dict:
     if re.search(r"how many .*(in stock|on hand|units)|stock level|in the warehouse", q):
         asks.append("stock_level")
     ref = None
-    m = re.search(r"coupon\s+([A-Z0-9][A-Z0-9/_-]{2,})", question)
+    m = (re.search(r"coupon\s+([A-Z0-9][A-Z0-9/_-]{2,})", question)
+         or re.search(r"(?<![\w/-])([A-Z0-9][A-Z0-9/_-]{2,})\s+coupon", question))
     if m:
         ref = m.group(1)
     elif "launch" in q:
         ref = "launch coupon"
     claims = [c for c, words in {"unpaid": ("unpaid", "without payment", "not paid"),
-                                 "shipped": ("shipped", "dispatched"),
+                                 "shipped": ("shipped", "ship ", "dispatched"),
                                  "delivered": ("delivered",), "cancelled": ("cancelled", "canceled")}.items()
               if any(w in q for w in words)]
     change = question if re.search(r"\b(cancel|delete|refund|edit|change|update)\b", q) else None
@@ -278,8 +283,10 @@ def render_template(finding: dict) -> str:
 def narrate(finding: dict, context: dict, llm: Gemini | None, rec: RunRecord) -> tuple[str, str]:
     if llm is None:
         return render_template(finding), "template"
+    # the compact finding (what is stored in AgentMemory) keeps every number and order the
+    # prose may cite, at a size any model's context takes; prose is still verified against it
     prompt = ("CONTEXT:\n" + json.dumps(context, default=str) + "\n\nFINDING:\n" +
-              json.dumps(finding, default=str)[:60000])
+              json.dumps(compact(finding), default=str)[:30000])
     try:
         prose = llm.generate_text(NARRATE_SYSTEM, prompt)
         problems = verify_prose(prose, finding)
@@ -332,8 +339,8 @@ def run(question: str, client: MCPClient, biz_key: str = "in", write: bool = Fal
     llm = None
     if use_llm:
         try:
-            llm = Gemini(on_call=rec.log_llm)
-            rec.data["model"] = llm.model
+            llm = make_llm(on_call=rec.log_llm)
+            rec.data["model"] = f"{llm.provider}:{llm.model}"
         except LLMUnavailable as e:
             rec.warn(str(e))
     rec.save()

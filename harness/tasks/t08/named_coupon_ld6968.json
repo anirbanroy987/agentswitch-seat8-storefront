@@ -1,5 +1,6 @@
 {
   "id": "named_coupon_ld6968",
+  "title": "Named coupon LD6968/1860: order count and used_count match the database",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

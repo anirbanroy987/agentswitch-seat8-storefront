@@ -1,5 +1,6 @@
 {
   "id": "refuse_stock_quantity",
+  "title": "Refuses a stock-quantity question, citing the access probe instead of guessing",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

@@ -153,3 +153,50 @@ def main(argv=None) -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+# ── the platform's results.json (official harness run) ───────────────────
+
+def _evidence(res: dict) -> str:
+    checks = res["checks"]
+    ok = sum(c["status"] == PASS for c in checks)
+    if res["verdict"] == PASS:
+        return f"pass: {ok}/{len(checks)} checks, graded on the finding read back from the database"
+    bad = [f"{c['name']}: {c['status']} ({json.dumps(c['detail'], default=str)[:120]})"
+           for c in checks if c["status"] != PASS]
+    return f"{res['verdict']}: {ok}/{len(checks)} checks pass; " + "; ".join(bad)
+
+
+def write_results(batch_dir: Path, path: Path) -> str:
+    """Score the batch (files only) and write the platform's results.json:
+    {"tasks": [{"id", "title", "passed", "score", "evidence"}], "summary"}.
+    Only `pass` is passed=true; drift and unevaluated are reported, not counted."""
+    manifest = _json(batch_dir / "manifest.json")
+    tasks = {t["id"]: t for t in manifest["tasks"]}
+    out, verdicts = [], []
+    for r in manifest["runs"]:
+        res = score_run(tasks[r["task_id"]], RUNS_DIR / r["run_id"], (manifest.get("me") or {}).get(r["instance"]))
+        t = tasks[r["task_id"]]
+        n = len(res["checks"])
+        out.append({"id": f"{r['instance']}:{r['task_id']}",
+                    "title": (t.get("title") or t.get("checks") or t["id"])[:160],
+                    "passed": res["verdict"] == PASS,
+                    "score": round(sum(c["status"] == PASS for c in res["checks"]) / n, 3) if n else 0.0,
+                    "evidence": _evidence(res)[:500]})
+        verdicts.append(res["verdict"])
+    counts = {v: verdicts.count(v) for v in (PASS, FAIL, DRIFT, UNEVALUATED)}
+    instances = sorted({r["instance"] for r in manifest["runs"]})
+    summary = (f"{','.join(instances) or 'no instance'}: {counts[PASS]}/{len(verdicts)} tasks pass "
+               f"({counts[FAIL]} fail, {counts[DRIFT]} drift, {counts[UNEVALUATED]} unevaluated) "
+               f"on commit {manifest.get('git_commit')}")
+    if not out:
+        out = [{"id": "harness:no_tasks", "title": "The harness ran at least one task", "passed": False,
+                "score": 0.0, "evidence": "no task matched this instance"}]
+    path.write_text(json.dumps({"tasks": out[:200], "summary": summary}, indent=2), encoding="utf-8")
+    return summary
+
+
+def write_crash_results(path: Path, error: str) -> None:
+    path.write_text(json.dumps({"tasks": [{"id": "harness:crashed", "title": "The harness ran to completion",
+                                           "passed": False, "score": 0.0, "evidence": error[:500]}],
+                                "summary": f"harness crashed: {error[:200]}"}, indent=2), encoding="utf-8")

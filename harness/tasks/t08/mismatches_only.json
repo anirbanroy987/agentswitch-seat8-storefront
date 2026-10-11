@@ -1,5 +1,6 @@
 {
   "id": "mismatches_only",
+  "title": "Every order where payment and fulfilment disagree matches the database, rule by rule",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

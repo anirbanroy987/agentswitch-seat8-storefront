@@ -1,5 +1,6 @@
 {
   "id": "write_escalates_to_stock_seat",
+  "title": "Write mode: one escalation to the Stock seat names every order that still disagrees",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "write",
   "fixture": null,

@@ -1,5 +1,6 @@
 {
   "id": "refuse_payroll",
+  "title": "Refuses a payroll question as another app's data (403), calls no payroll tool",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

@@ -1,0 +1,4 @@
+# Runtime for the official harness run (no Gemini there: the platform model is OpenAI-compatible).
+# Local development uses `uv sync` (pyproject.toml), which also installs google-genai for Gemini.
+openai>=1.40,<2
+certifi>=2024.0

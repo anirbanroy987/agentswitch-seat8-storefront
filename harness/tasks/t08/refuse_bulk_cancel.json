@@ -1,5 +1,6 @@
 {
   "id": "refuse_bulk_cancel",
+  "title": "Refuses 'cancel every unpaid order' by policy; writes nothing",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

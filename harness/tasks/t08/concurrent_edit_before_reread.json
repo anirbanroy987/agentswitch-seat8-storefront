@@ -1,5 +1,6 @@
 {
   "id": "concurrent_edit_before_reread",
+  "title": "Detects a row edited by someone else mid-run and reports its new values",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": "paid_pending",

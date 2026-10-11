@@ -25,7 +25,9 @@ import json
 import os
 import subprocess
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from seat8 import auth
@@ -100,12 +102,14 @@ def withdraw_escalations(client: MCPClient, finding_db: dict) -> list[dict]:
         return [{"id": esc["id"], "withdrawn": False, "error": f"{e.code}: {e}"[:300]}]
 
 
-def run_task(task: dict, instance: str, batch_id: str, a) -> dict:
+def run_task(task: dict, instance: str, batch_id: str, a, deadline: float | None = None) -> dict:
     run_id = f"{batch_id}-{instance}-{task['id']}"
     run_dir = RUNS_DIR / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
     _save(run_dir / "task.json", {**task, "instance": instance})
     entry = {"task_id": task["id"], "instance": instance, "run_id": run_id}
+    if deadline and time.time() > deadline - 90:
+        return _skip(run_dir, entry, "not run: the harness time budget ran out before this task started")
     biz = business(INSTANCES[instance])
     try:
         token = auth.load_token(biz)
@@ -155,10 +159,13 @@ def run_task(task: dict, instance: str, batch_id: str, a) -> dict:
             else:
                 itf["error"] = "the agent never reached its pause point"
                 _save(run_dir / "interference.json", itf)
+        limit = 900 if not deadline else max(30, min(900, deadline - time.time() - 45))
         try:
-            proc.wait(timeout=900)
+            proc.wait(timeout=limit)
         except subprocess.TimeoutExpired:
             proc.kill()
+            proc.wait()
+            entry["killed_after_s"] = round(limit)
     entry.update(exit_code=proc.returncode, seconds=round(time.time() - started, 1))
 
     _save(run_dir / "ground_truth_after.json", observe_all(client, task))
@@ -169,6 +176,17 @@ def run_task(task: dict, instance: str, batch_id: str, a) -> dict:
     return entry
 
 
+def _toml_settings() -> dict:
+    path = REPO_DIR / "agentswitch-harness.toml"
+    if not path.exists():
+        return {}
+    try:
+        import tomllib
+        return tomllib.loads(path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001 - settings are a convenience; defaults apply
+        return {}
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="harness.runner")
     p.add_argument("--tasks", help="comma-separated task ids (default: all)")
@@ -176,31 +194,71 @@ def main(argv=None) -> int:
     p.add_argument("--write", action="store_true", help="also run mode=write tasks")
     p.add_argument("--no-llm", action="store_true")
     p.add_argument("--include-samples", action="store_true")
+    p.add_argument("--jobs", type=int, help="tasks run in parallel (default 1; official 3)")
+    p.add_argument("--results", help="also write the platform's results.json format to this path")
+    p.add_argument("--official", action="store_true",
+                   help="the AgentSwitch server run: instance from AGENTSWITCH_INSTANCE, writes allowed "
+                        "(the instance is a throwaway copy), parallel, deadline from the toml, results.json")
     a = p.parse_args(argv)
+    settings = _toml_settings()
+    started = time.time()
+    deadline = None
+    if a.official:
+        a.instance = (os.environ.get("AGENTSWITCH_INSTANCE") or "").lower() or a.instance
+        a.write = True
+        a.jobs = a.jobs or 3
+        a.results = a.results or settings.get("results") or "results.json"
+        deadline = started + float(settings.get("timeout_minutes") or 20) * 60 - 150
+    jobs = max(1, a.jobs or 1)
 
-    tasks = load_tasks(a.include_samples, a.tasks.split(",") if a.tasks else None)
     batch_id = time.strftime("%Y%m%dT%H%M%S")
     batch_dir = RUNS_DIR / "batches" / batch_id
     batch_dir.mkdir(parents=True, exist_ok=True)
-    me = {}
-    for inst, key in INSTANCES.items():
-        try:
-            biz = business(key)
-            me[inst] = MCPClient(biz.base_url, auth.load_token(biz)).rest_get("/api/auth/me").get("id")
-        except (RuntimeError, MCPError):
-            me[inst] = None
-    manifest = {"batch_id": batch_id, "git_commit": _git_commit(), "write": a.write, "no_llm": a.no_llm,
-                "started_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "me": me, "tasks": tasks, "runs": []}
-    for t in tasks:
-        for inst in t.get("instances") or ["suryodaya"]:
+    try:
+        tasks = load_tasks(a.include_samples, a.tasks.split(",") if a.tasks else None)
+        me = {}
+        for inst, key in INSTANCES.items():
             if a.instance and inst != a.instance:
                 continue
+            try:
+                biz = business(key)
+                me[inst] = MCPClient(biz.base_url, auth.load_token(biz)).rest_get("/api/auth/me").get("id")
+            except (RuntimeError, MCPError):
+                me[inst] = None
+        manifest = {"batch_id": batch_id, "git_commit": _git_commit(), "write": a.write, "no_llm": a.no_llm,
+                    "official": a.official, "jobs": jobs, "started_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+                    "me": me, "tasks": tasks, "runs": []}
+        todo = [(t, inst) for t in tasks for inst in (t.get("instances") or ["suryodaya"])
+                if not a.instance or inst == a.instance]
+        lock = threading.Lock()
+
+        def one(item):
+            t, inst = item
             print(f"[{batch_id}] {inst:9} {t['id']} ...", flush=True)
-            manifest["runs"].append(run_task(t, inst, batch_id, a))
-            _save(batch_dir / "manifest.json", manifest)
-    manifest["ended_at"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
-    _save(batch_dir / "manifest.json", manifest)
-    print(f"saved {len(manifest['runs'])} runs -> {batch_dir}\nscore: uv run python -m harness.score {batch_dir}")
+            entry = run_task(t, inst, batch_id, a, deadline)
+            with lock:
+                manifest["runs"].append(entry)
+                _save(batch_dir / "manifest.json", manifest)
+            return entry
+
+        with ThreadPoolExecutor(max_workers=jobs) as pool:
+            list(pool.map(one, todo))
+        order = {(t["id"], inst): i for i, (t, inst) in enumerate(todo)}
+        manifest["runs"].sort(key=lambda r: order[(r["task_id"], r["instance"])])
+        manifest["ended_at"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
+        manifest["seconds"] = round(time.time() - started, 1)
+        _save(batch_dir / "manifest.json", manifest)
+        print(f"saved {len(manifest['runs'])} runs -> {batch_dir} in {manifest['seconds']}s")
+        print(f"score: uv run python -m harness.score {batch_dir}")
+    except Exception as e:  # the official run must still leave a results.json behind
+        if a.results:
+            from .score import write_crash_results
+            write_crash_results(Path(a.results), f"{type(e).__name__}: {e}")
+        raise
+    if a.results:
+        from .score import write_results
+        summary = write_results(batch_dir, Path(a.results))
+        print(f"results -> {a.results}: {summary}")
     return 0
 
 

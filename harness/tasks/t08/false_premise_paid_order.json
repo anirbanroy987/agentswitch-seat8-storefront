@@ -1,5 +1,6 @@
 {
   "id": "false_premise_paid_order",
+  "title": "Corrects a false premise: WEB-2026-00109 is paid and not shipped",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

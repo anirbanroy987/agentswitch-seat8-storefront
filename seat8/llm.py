@@ -1,4 +1,5 @@
-"""Gemini, through the google-genai SDK. The model comes from GEMINI_MODEL.
+"""Model clients. Gemini (google-genai, GEMINI_MODEL) locally; the OpenAI-compatible
+client in llm_openai.py on the official harness run (see make_llm).
 
 Two uses only:
   * `generate_json`: one-shot structured output (intent parsing, narration).
@@ -18,11 +19,24 @@ from .config import load_env
 _RETRYABLE = ("429", "RESOURCE_EXHAUSTED", "500", "503", "UNAVAILABLE", "DEADLINE_EXCEEDED")
 
 
-class LLMUnavailable(RuntimeError):
-    pass
+from .llm_openai import LLMUnavailable, OpenAICompat  # noqa: E402  (one exception type for both providers)
+
+
+def make_llm(on_call: Callable[[dict], None] | None = None):
+    """The model client for this run. LLM_PROVIDER=gemini|openai forces one;
+    otherwise the OpenAI-compatible client is used when OPENAI_API_KEY and
+    OPENAI_BASE_URL are in the environment (the official harness run), else Gemini."""
+    import os
+    env = {**load_env(), **os.environ}
+    provider = (env.get("LLM_PROVIDER") or "").lower()
+    if not provider:
+        provider = "openai" if os.environ.get("OPENAI_API_KEY") and os.environ.get("OPENAI_BASE_URL") else "gemini"
+    return OpenAICompat(on_call=on_call) if provider == "openai" else Gemini(on_call=on_call)
 
 
 class Gemini:
+    provider = "gemini"
+
     def __init__(self, model: str | None = None, api_key: str | None = None,
                  max_retries: int = 5, on_call: Callable[[dict], None] | None = None):
         env = load_env()
@@ -158,6 +172,10 @@ class ToolLoop:
         return [types.Tool(function_declarations=decls)]
 
     def run(self, system: str, question: str) -> str:
+        if hasattr(self.llm, "run_tools"):  # OpenAI-compatible provider
+            answer, self.trace, self.stopped_at_budget = self.llm.run_tools(
+                system, question, self.tools, self.executor, self.max_steps)
+            return answer
         types = self.llm._genai.types
         config = types.GenerateContentConfig(
             system_instruction=system, temperature=0.0, tools=self._declarations(),

@@ -1,5 +1,6 @@
 {
   "id": "order_facts_delivered_unpaid",
+  "title": "WEB-2026-00074 facts and flags (delivered, unpaid) match the database",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

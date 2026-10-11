@@ -45,6 +45,12 @@ def save_token(biz: Business, email: str, token: str) -> None:
 
 
 def load_token(biz: Business) -> str:
+    """AGENTSWITCH_TOKEN on the official harness run (for AGENTSWITCH_INSTANCE);
+    otherwise the token cached by `seat8 login`."""
+    import os
+    from .config import platform_instance
+    if os.environ.get("AGENTSWITCH_TOKEN") and platform_instance() in (None, biz.key):
+        return os.environ["AGENTSWITCH_TOKEN"]
     p = token_path(biz)
     if not p.exists():
         raise RuntimeError(f"no token for {biz.name}: run `uv run python -m seat8 login --biz {biz.key}`")

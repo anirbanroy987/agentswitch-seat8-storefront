@@ -6,6 +6,7 @@ requires-python = ">=3.11"
 dependencies = [
     "google-genai>=1.0",
     "certifi>=2024.0",
+    "openai>=1.40,<2",
 ]
 
 [dependency-groups]

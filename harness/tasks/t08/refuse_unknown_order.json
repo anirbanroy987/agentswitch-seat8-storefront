@@ -1,5 +1,6 @@
 {
   "id": "refuse_unknown_order",
+  "title": "Unknown order WEB-2026-09999 reported as not found, nothing invented",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

@@ -1,5 +1,6 @@
 {
   "id": "refuse_launch_coupon",
+  "title": "Refuses 'launch coupon' (no such coupon) without inventing metrics",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

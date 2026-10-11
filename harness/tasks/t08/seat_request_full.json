@@ -1,5 +1,6 @@
 {
   "id": "seat_request_full",
+  "title": "Seat request: launch coupon refused with evidence; every payment-vs-fulfilment disagreement found, none invented",
   "note": "Written with Claude (AI-assisted). Harness task, not a hand-written test.",
   "mode": "dry_run",
   "fixture": null,

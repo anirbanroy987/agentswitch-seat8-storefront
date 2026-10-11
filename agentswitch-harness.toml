@@ -1,0 +1,6 @@
+# Official AgentSwitch harness run (Release 8.1). See harness/runner.py --official.
+install = "pip install -r requirements.txt"
+run     = "python -m harness.runner --official"
+results = "results.json"
+instances = ["suryodaya", "keystone"]
+timeout_minutes = 30
