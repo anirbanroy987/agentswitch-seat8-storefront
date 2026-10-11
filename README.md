@@ -139,6 +139,34 @@ premise holds on both. Format and verifier API: [`harness/tasks/README.md`](harn
 **Authorship.** The task set, its verifiers and the `_sample` files were written with Claude
 (AI-assisted) and are declared as such. They are the harness, not the graded hand-written tests.
 
+## Official harness run (AgentSwitch Release 8.1)
+
+The platform runs this repo's harness on its own server from **Our harness → Submit for a run** (one run
+per team every 3 days), against a throwaway copy of each instance, with its own token and model:
+
+```toml
+# agentswitch-harness.toml
+install = "pip install -r requirements.txt"
+run     = "python -m harness.runner --official"
+results = "results.json"
+instances = ["suryodaya", "keystone"]
+timeout_minutes = 30
+```
+
+* `--official`: instance from `AGENTSWITCH_INSTANCE`; token and URL from `AGENTSWITCH_TOKEN` /
+  `AGENTSWITCH_BASE_URL` (no `.env`, no password); write-mode tasks run (the copy is thrown away);
+  3 tasks in parallel; a deadline from `timeout_minutes`; `results.json` is always written, even on a crash.
+* Model: when `OPENAI_BASE_URL` + `OPENAI_API_KEY` are set, the agent uses the OpenAI-compatible client
+  (`seat8/llm_openai.py`); locally it uses Gemini. With no working model it still answers (keyword routing,
+  template prose), because every number comes from code.
+* `results.json` lists one task per (instance, task): `passed` is true only for a `pass` verdict; `score` is
+  the share of checks that passed; `evidence` names the checks that did not.
+* Before submitting: `uv run python -m harness.preflight [results.json]` checks the toml and the results format.
+
+**Local rehearsal** (fresh clone, `pip install -r requirements.txt`, only the platform's env vars, an
+OpenAI-compatible stand-in model, write task excluded because the local book is live): 12/12 Suryodaya tasks
+pass, preflight OK, 6.6 minutes.
+
 ## Status (2026-10-10)
 
 | | Suryodaya (India) | Keystone (US) |
